@@ -1,0 +1,76 @@
+{{!< default}}
+{{#post}}
+
+<header class="page-hero center">
+    <div class="container">
+        <div class="page-hero-inner reveal">
+            <nav class="breadcrumb"><a href="{{@site.url}}">Home</a> <span>/</span> <span>{{title}}</span></nav>
+            <h1>{{title}}</h1>
+            {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>There are many ways to be part of restoring lives and empowering communities.</p>{{/if}}
+        </div>
+    </div>
+</header>
+
+{{#if content}}
+<section class="section-sm"><div class="container"><div class="post-content reveal" style="margin:0 auto;">{{content}}</div></div></section>
+{{/if}}
+
+{{!-- Ways to get involved — image cards --}}
+<section class="section">
+    <div class="container">
+        <div class="section-head center reveal gi-head"><span class="eyebrow center">Get Involved</span><h2>Three ways to make a difference</h2></div>
+        <div class="gi-grid">
+            <div class="gi-item reveal">
+                <img class="gi-img" src="{{asset "get-involved/donate.png"}}" alt="Donate" loading="lazy" />
+                <h3 class="gi-title">Donate</h3>
+                <p class="gi-desc">Fund a survivor's rehabilitation, a woman's livelihood, or a community health camp.</p>
+                <a href="/donate/" class="btn gi-btn">Donate</a>
+            </div>
+            <div class="gi-item reveal reveal-delay-1">
+                <img class="gi-img" src="{{asset "get-involved/support.png"}}" alt="Support" loading="lazy" />
+                <h3 class="gi-title">Support</h3>
+                <p class="gi-desc">Partner with us through CSR, camps and resource support to help us reach more people.</p>
+                <a href="/contact/" class="btn gi-btn">Support</a>
+            </div>
+            <div class="gi-item reveal reveal-delay-2">
+                <img class="gi-img" src="{{asset "get-involved/volunteer.png"}}" alt="Volunteer" loading="lazy" />
+                <h3 class="gi-title">Volunteer</h3>
+                <p class="gi-desc">Share your time and skills at our centres and camps — every hand makes a difference.</p>
+                <a href="/contact/" class="btn gi-btn">Volunteer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- Enquire for a programme --}}
+<section class="section bg-soft">
+    <div class="container">
+        <div class="section-head center reveal gi-head"><span class="eyebrow center">Apply Directly</span><h2>Enquire for a programme</h2></div>
+        <div class="gi-prog-row">
+            <a href="/sevadhama/" class="gi-prog reveal">
+                <div class="gi-prog-text">
+                    <h3>Sevadhama</h3>
+                    <p>Residential rehabilitation, community-based rehab and livelihood support for spinal cord injury survivors.</p>
+                </div>
+                <span class="gi-prog-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a href="/sabalini/" class="gi-prog reveal reveal-delay-1">
+                <div class="gi-prog-text">
+                    <h3>Sabalini</h3>
+                    <p>Free tailoring camps and skill-development programmes for rural women across Belthangady taluk.</p>
+                </div>
+                <span class="gi-prog-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a href="/arogyam/" class="gi-prog reveal reveal-delay-2">
+                <div class="gi-prog-text">
+                    <h3>Arogyam</h3>
+                    <p>Health camps, 24/7 ambulance services and blood donation support for rural communities.</p>
+                </div>
+                <span class="gi-prog-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+        </div>
+        <div style="text-align:center; margin-top:40px;" class="reveal"><a href="/contact/" class="btn btn-outline btn-lg">Talk to our team</a></div>
+    </div>
+</section>
+
+{{/post}}

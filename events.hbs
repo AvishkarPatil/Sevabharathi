@@ -1,0 +1,53 @@
+{{!< default}}
+
+<header class="archive-hero">
+    <div class="container">
+        <span class="eyebrow center">Get Involved</span>
+        <h1>Events &amp; camps</h1>
+        <p>Join our upcoming camps, drives and community events across coastal Karnataka.</p>
+    </div>
+</header>
+
+<section class="section" style="padding-top:48px;">
+    <div class="container">
+        {{#if posts}}
+        <div class="ev-tabs" id="ev-tabs">
+            <button type="button" class="ev-tab active" data-cat="upcoming">Upcoming</button>
+            <button type="button" class="ev-tab" data-cat="ongoing">Ongoing</button>
+            <button type="button" class="ev-tab" data-cat="past">Past</button>
+        </div>
+        <div class="ev-grid">
+            {{#foreach posts}}
+            <article class="ev-card" data-date="{{custom_excerpt}}" data-feature="{{#if feature_image}}{{img_url feature_image size="m"}}{{/if}}">
+                <div class="ev-media">
+                    <div class="ev-slides"></div>
+                    <div class="ev-dots"></div>
+                    <div class="ev-date"></div>
+                </div>
+                <div class="ev-body">
+                    <h3>{{title}}</h3>
+                    <p class="ev-desc"></p>
+                    <div class="ev-actions">
+                        <a href="{{url}}" class="btn btn-outline">More Details</a>
+                        <a href="{{#if og_title}}{{og_title}}{{else}}{{url}}{{/if}}" class="btn btn-primary"{{#if og_title}} target="_blank" rel="noopener"{{/if}}>Register</a>
+                    </div>
+                </div>
+                <div class="ev-source">{{content}}</div>
+            </article>
+            {{/foreach}}
+        </div>
+        <p class="ev-empty-cat" id="ev-empty" hidden>No events in this category right now.</p>
+
+        {{#if pagination.pages}}
+        <nav class="pagination" role="navigation">
+            {{#if pagination.prev}}<a href="{{page_url pagination.prev}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Newer</a>{{/if}}
+            <span class="page-number">Page {{pagination.page}} of {{pagination.pages}}</span>
+            {{#if pagination.next}}<a href="{{page_url pagination.next}}">Older <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>{{/if}}
+        </nav>
+        {{/if}}
+
+        {{else}}
+        <p class="empty-note">No events yet. Add posts tagged <strong>event</strong>. Put the <strong>event date</strong> in the post <em>Excerpt</em> as <code>YYYY-MM-DD</code> (this is what sorts Upcoming/Ongoing/Past), the description and extra photos in the body, and the registration link in the post's <em>Facebook title</em> field.</p>
+        {{/if}}
+    </div>
+</section>

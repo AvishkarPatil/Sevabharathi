@@ -1,0 +1,54 @@
+{
+  "name": "sbk-theme",
+  "description": "Custom Ghost theme for Seva Bharathi Kanyady NGO",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=6.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Seva Bharathi Kanyady",
+    "email": "sevabharathikanyady@gmail.com"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "config": {
+    "posts_per_page": 6,
+    "card_assets": true,
+    "image_sizes": {
+      "xxs": { "width": 30 },
+      "xs": { "width": 100 },
+      "s": { "width": 300 },
+      "m": { "width": 600 },
+      "l": { "width": 1000 },
+      "xl": { "width": 2000 }
+    },
+    "custom": {
+      "about_image_1": { "type": "image", "description": "Home About collage — image 1 (top left)" },
+      "about_image_2": { "type": "image", "description": "Home About collage — image 2 (right)" },
+      "about_image_3": { "type": "image", "description": "Home About collage — image 3 (bottom)" },
+      "about_media_url": { "type": "text", "description": "About page 'Who We Are' media — paste a YouTube URL (shows as video) or an image URL" },
+      "serve_map": { "type": "image", "description": "About page 'Where We Serve' districts map image" },
+
+      "contact_email": { "type": "text", "default": "sevabharathikanyady@gmail.com" },
+      "contact_phone": { "type": "text", "default": "+91 99454 91241" },
+      "contact_address_main": { "type": "text", "default": "Sevanikethana, Kanyady-II, Dharmasthala Post and Village, D.K, Karnataka - 574216" },
+      "contact_address_southadka": { "type": "text", "default": "Sevadhama, Opp. Southadka Mahaganapathi Temple, Kokkada Village, Belthangady Tq., D.K - 574198" },
+      "contact_address_byndoor": { "type": "text", "default": "Sevadhama Wound Care & Rehabilitation Centre, Henaberu, Paduvari Post, Byndoor Taluk, Udupi District - 576214" },
+      "contact_map_embed_url": { "type": "text", "default": "" },
+
+      "donate_upi_id": { "type": "text", "default": "" },
+      "donate_external_url": { "type": "text", "default": "https://www.sociallygood.com" },
+
+      "whatsapp_number": { "type": "text", "default": "", "description": "WhatsApp number with country code, e.g. 919945491241" },
+
+      "home_stat_identified": { "type": "text", "default": "833", "description": "Home impact — Identified" },
+      "home_stat_rehabilitated": { "type": "text", "default": "279", "description": "Home impact — Rehabilitated" },
+      "home_stat_devices": { "type": "text", "default": "797", "description": "Home impact — Devices" },
+      "home_stat_families": { "type": "text", "default": "1,107", "description": "Home impact — Families" },
+      "home_stat_health": { "type": "text", "default": "13,500+", "description": "Home impact — Health services" },
+      "home_stat_blood": { "type": "text", "default": "11,399", "description": "Home impact — Blood units" }
+    }
+  }
+}

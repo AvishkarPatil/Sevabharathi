@@ -1,0 +1,39 @@
+{{!< default}}
+{{#page}}
+
+<header class="page-hero center team-page-hero">
+    <div class="container">
+        <div class="page-hero-inner reveal">
+            <nav class="breadcrumb"><a href="{{@site.url}}">Home</a> <span>/</span> <span>{{title}}</span></nav>
+            <span class="eyebrow center">Our People</span>
+            <h1>{{title}}</h1>
+            {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>Driven by compassion, united by purpose — meet the people behind Seva Bharathi Kanyady.</p>{{/if}}
+        </div>
+    </div>
+</header>
+
+{{!-- Leadership / Founder (posts tagged team-lead): photo + content lines = name / position / description --}}
+{{#get "posts" filter="tag:team-lead" limit="10" order="published_at asc" as |leads|}}
+    {{#if leads}}
+    <section class="section team-lead-section">
+        <div class="container">
+            {{#foreach leads}}
+            <div class="lead-card reveal">
+                <div class="lead-photo">{{#if feature_image}}<img src="{{img_url feature_image size="m"}}" alt="" loading="lazy" />{{else}}<div class="lead-ph"></div>{{/if}}</div>
+                <div class="lead-content">{{content}}</div>
+            </div>
+            {{/foreach}}
+        </div>
+    </section>
+    {{/if}}
+{{/get}}
+
+{{!-- Team members: add your HTML (team-group / team-grid / team-card blocks) in the page body.
+     Multiple team-group headings auto-convert into tabs. --}}
+<section class="section bg-soft team-members-section">
+    <div class="container">
+        <div class="team-content">{{content}}</div>
+    </div>
+</section>
+
+{{/page}}

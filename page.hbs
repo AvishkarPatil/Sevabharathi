@@ -1,0 +1,30 @@
+{{!< default}}
+{{#post}}
+<article class="page-article">
+    {{#if @page.show_title_and_feature_image}}
+    <header class="page-hero center">
+        <div class="container">
+            <div class="page-hero-inner">
+                <nav class="breadcrumb"><a href="{{@site.url}}">Home</a> <span>/</span> <span>{{title}}</span></nav>
+                <h1>{{title}}</h1>
+                {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{/if}}
+            </div>
+        </div>
+    </header>
+
+    {{#if feature_image}}
+    <div class="container" style="margin-top:-30px; position:relative; z-index:2;">
+        <img class="reveal" src="{{img_url feature_image size="xl"}}" alt="{{title}}" style="width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-card); aspect-ratio:21/8; object-fit:cover;" />
+    </div>
+    {{/if}}
+    {{/if}}
+
+    <section class="section{{#unless @page.show_title_and_feature_image}} page-hero{{/unless}}">
+        <div class="container">
+            <div class="post-content reveal" style="margin:0 auto;">
+                {{content}}
+            </div>
+        </div>
+    </section>
+</article>
+{{/post}}

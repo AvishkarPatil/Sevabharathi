@@ -1,0 +1,21 @@
+{{!< default}}
+{{#post}}
+
+<header class="page-hero center">
+    <div class="container">
+        <div class="page-hero-inner reveal">
+            <nav class="breadcrumb"><a href="{{@site.url}}">Home</a> <span>/</span> <span>{{title}}</span></nav>
+            <h1>{{title}}</h1>
+            {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>Recognised by government and credibility bodies for service in the disability and health sectors.</p>{{/if}}
+        </div>
+    </div>
+</header>
+
+{{!-- Awards — add Image cards (with captions) in the page body; they render as a framed 2-column grid --}}
+<section class="section">
+    <div class="container">
+        <div class="awards-content reveal">{{content}}</div>
+    </div>
+</section>
+
+{{/post}}

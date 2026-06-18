@@ -1,0 +1,96 @@
+{{!< default}}
+{{#post}}
+
+<header class="archive-hero">
+    <div class="container">
+        <span class="eyebrow center">Real Lives</span>
+        <h1>{{title}}</h1>
+        {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>From bedridden to self-reliant — the people behind the numbers, and the difference your support makes.</p>{{/if}}
+    </div>
+</header>
+
+{{!-- Stories archive: search + category filter (success-stories posts) --}}
+<section class="section" style="padding-top:48px;">
+    <div class="container">
+        {{#get "posts" filter="tag:success-stories" limit="100" order="published_at desc" as |stories|}}
+            {{#if stories}}
+            <div class="filter-bar reveal">
+                <div class="filter-field">
+                    <label for="blog-search">Search</label>
+                    <div class="filter-input">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        <input type="text" id="blog-search" placeholder="Search stories...">
+                    </div>
+                </div>
+                <div class="filter-field">
+                    <label for="blog-cat">Category</label>
+                    <div class="filter-select"><select id="blog-cat"><option value="all">All stories</option></select></div>
+                </div>
+            </div>
+
+            <div class="blog-grid" id="blog-grid">
+                {{#foreach stories}}
+                <article class="blog-card" data-title="{{title}}" data-cat="{{#primary_tag}}{{slug}}{{/primary_tag}}" data-catname="{{#primary_tag}}{{name}}{{/primary_tag}}">
+                    <div class="blog-card-img">
+                        <a href="{{url}}" class="bci-link" aria-label="{{title}}">{{#if feature_image}}<img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />{{else}}<div class="blog-card-ph"></div>{{/if}}</a>
+                        <button class="story-play" type="button" data-video-trigger aria-label="Play video" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div class="story-video-src" hidden>{{content}}</div>
+                    </div>
+                    <div class="blog-card-body">
+                        {{#primary_tag}}<span class="blog-cat">{{name}}</span>{{/primary_tag}}
+                        <h3><a href="{{url}}">{{title}}</a></h3>
+                        <p>{{excerpt words="20"}}</p>
+                        <div class="blog-foot">
+                            <a href="{{url}}" class="blog-more">Read story <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </div>
+                </article>
+                {{/foreach}}
+            </div>
+
+            <p class="blog-empty" id="blog-empty">No stories match your search.</p>
+
+            <nav class="pagination" id="blog-pager" hidden>
+                <button class="btn btn-outline pg-prev" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Newer</button>
+                <span class="page-number" id="blog-pageinfo"></span>
+                <button class="btn btn-outline pg-next" type="button">Older <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </nav>
+            {{else}}
+            <p class="empty-note">No stories yet. Add posts tagged <strong>success-stories</strong> (add a second tag like <em>From Bedridden to Self-Reliant</em> as the category).</p>
+            {{/if}}
+        {{/get}}
+    </div>
+</section>
+
+{{!-- Feedback slider (posts tagged feedback): photo + quote, optional video, auto-changing --}}
+{{#get "posts" filter="tag:feedback" limit="12" order="published_at desc" as |fb|}}
+    {{#if fb}}
+    <section class="section bg-soft">
+        <div class="container">
+            <div class="section-head center reveal"><span class="eyebrow center">In Their Words</span><h2>And this is the difference we make</h2></div>
+            <div class="fb-slider reveal" id="fb-slider">
+                <div class="fb-track">
+                    {{#foreach fb}}
+                    <article class="fb-item{{#if @first}} active{{/if}}">
+                        <div class="fb-media">
+                            {{#if feature_image}}<img src="{{img_url feature_image size="l"}}" alt="{{title}}" loading="lazy" />{{else}}<div class="fb-ph"></div>{{/if}}
+                            <button class="fb-play" type="button" aria-label="Play video"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+                            <div class="fb-embed"></div>
+                        </div>
+                        <div class="fb-body">
+                            <svg class="fb-qicon" width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v6c0 2.2-1.4 3.6-3.6 4l-.4-1.5C8.3 15 9 14.3 9 13H7V7zm7 0h4v6c0 2.2-1.4 3.6-3.6 4l-.4-1.5c1.3-.5 2-1.2 2-2.5h-2V7z"/></svg>
+                            <p class="fb-text">{{excerpt words="46"}}</p>
+                            <div class="fb-name">{{title}}</div>
+                        </div>
+                        <div class="fb-source" hidden>{{content}}</div>
+                    </article>
+                    {{/foreach}}
+                </div>
+                <div class="fb-dots" id="fb-dots"></div>
+            </div>
+        </div>
+    </section>
+    {{/if}}
+{{/get}}
+
+{{/post}}

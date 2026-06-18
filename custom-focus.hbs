@@ -1,0 +1,40 @@
+{{!< default}}
+{{#post}}
+
+<header class="page-hero center">
+    <div class="container">
+        <div class="page-hero-inner reveal">
+            <nav class="breadcrumb"><a href="{{@site.url}}">Home</a> <span>/</span> <span>{{title}}</span></nav>
+            <span class="eyebrow center">What We Focus On</span>
+            <h1>{{title}}</h1>
+            {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{/if}}
+        </div>
+    </div>
+</header>
+
+{{#if feature_image}}
+<div class="container" style="margin-top:-26px; position:relative; z-index:2;">
+    <div class="activity-detail-img reveal"><img src="{{img_url feature_image size="xl"}}" alt="{{title}}" /></div>
+</div>
+{{/if}}
+
+<section class="section">
+    <div class="container">
+        <div class="post-content reveal" style="margin:0 auto;">{{content}}</div>
+    </div>
+</section>
+
+<section class="section-sm cta-banner">
+    <div class="container">
+        <div class="cta-card reveal">
+            <h2>Be part of the change</h2>
+            <p>Explore our programmes or support this work across coastal Karnataka.</p>
+            <div class="cta-actions">
+                <a href="/programs/" class="btn btn-light btn-lg">Our Programs</a>
+                <a href="/donate/" class="btn btn-ghost-light btn-lg">Donate</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{/post}}

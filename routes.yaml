@@ -1,0 +1,30 @@
+routes: {}
+
+collections:
+  /blogs/:
+    permalink: /blogs/{slug}/
+    template: blogs
+    filter: tag:blog
+    order: published_at desc
+  /newsletters/:
+    permalink: /newsletters/{slug}/
+    template: newsletters
+    filter: tag:newsletter
+    order: published_at desc
+  /annual-reports/:
+    permalink: /annual-reports/{slug}/
+    template: annual-reports
+    filter: tag:annual-report
+    order: published_at desc
+  /events/:
+    permalink: /events/{slug}/
+    template: events
+    filter: tag:event
+    order: published_at desc
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

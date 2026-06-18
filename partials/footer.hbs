@@ -1,0 +1,72 @@
+<footer class="site-footer">
+
+    <div class="footer-follow">
+        <div class="footer-follow-inner">
+            <span class="ff-label">Follow Us On</span>
+            <div class="ff-icons">
+                {{> social-icons}}
+                {{#if @custom.contact_email}}<a href="mailto:{{@custom.contact_email}}" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8"/></svg></a>{{/if}}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-shell">
+
+        <div class="footer-left">
+            <div class="f-logo">
+                {{#if @site.logo}}<span class="f-logo-box"><img src="{{@site.logo}}" alt="{{@site.title}}" /></span>{{else}}<div class="f-logo-text">{{@site.title}}</div>{{/if}}
+            </div>
+            <p class="f-desc">{{@site.description}}</p>
+            <h4>Contact Info</h4>
+            <ul class="f-contact">
+                {{#if @custom.contact_address_main}}
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg><span>{{@custom.contact_address_main}}</span></li>
+                {{/if}}
+                {{#if @custom.contact_phone}}
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2 1c1 2 2.5 3.5 4.5 4.5l1-2 5 2v3c0 1-1 2-2 2A16 16 0 013 6c0-1 1-2 2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><a href="tel:{{@custom.contact_phone}}">{{@custom.contact_phone}}</a></li>
+                {{/if}}
+                {{#if @custom.contact_email}}
+                <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6"/></svg><a href="mailto:{{@custom.contact_email}}">{{@custom.contact_email}}</a></li>
+                {{/if}}
+            </ul>
+            <div class="f-social">
+                {{> social-icons}}
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{{@site.url}}">Home</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/impact/">Our Impact</a></li>
+                    <li><a href="/team/">Our Team</a></li>
+                    <li><a href="/awards/">Awards</a></li>
+                    <li><a href="/legal-status/">Legal Status</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Get Associated</h4>
+                <ul>
+                    <li><a href="/sevadhama/">Sevadhama</a></li>
+                    <li><a href="/sabalini/">Sabalini</a></li>
+                    <li><a href="/arogyam/">Arogyam</a></li>
+                    <li><a href="/get-involved/">Volunteer</a></li>
+                    <li><a href="/donate/">Donate</a></li>
+                    <li><a href="/stories/">Success Stories</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; {{date format="YYYY"}} {{@site.title}}. All rights reserved.</p>
+        <div class="footer-legal">
+            <span>Trust Reg: B IV-220/2012-13</span>
+            <span>80G: AAMTS2926DF20214</span>
+            <span>FCRA: 094630241</span>
+        </div>
+    </div>
+</footer>

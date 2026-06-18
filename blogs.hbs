@@ -1,0 +1,60 @@
+{{!< default}}
+
+<header class="archive-hero">
+    <div class="container">
+        <span class="eyebrow center">Our Journal</span>
+        <h1>News, stories &amp; insights</h1>
+        <p>Updates and field stories from our work across coastal Karnataka.</p>
+    </div>
+</header>
+
+<section class="section" style="padding-top:48px;">
+    <div class="container">
+        {{#get "posts" filter="tag:blog" limit="100" order="published_at desc" as |articles|}}
+            {{#if articles}}
+            <div class="filter-bar reveal">
+                <div class="filter-field">
+                    <label for="blog-search">Search</label>
+                    <div class="filter-input">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        <input type="text" id="blog-search" placeholder="Search by title...">
+                    </div>
+                </div>
+                <div class="filter-field">
+                    <label for="blog-cat">Category</label>
+                    <div class="filter-select"><select id="blog-cat"><option value="all">All categories</option></select></div>
+                </div>
+            </div>
+
+            <div class="blog-grid" id="blog-grid">
+                {{#foreach articles}}
+                <article class="blog-card" data-title="{{title}}" data-cat="{{#primary_tag}}{{slug}}{{/primary_tag}}" data-catname="{{#primary_tag}}{{name}}{{/primary_tag}}">
+                    <a href="{{url}}" class="blog-card-img">{{#if feature_image}}<img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />{{else}}<div class="blog-card-ph"></div>{{/if}}</a>
+                    <div class="blog-card-body">
+                        {{#primary_tag}}<span class="blog-cat">{{name}}</span>{{/primary_tag}}
+                        <h3><a href="{{url}}">{{title}}</a></h3>
+                        <p>{{excerpt words="20"}}</p>
+                        <div class="blog-date">{{date published_at format="MMMM D, YYYY"}}</div>
+                        <div class="blog-foot">
+                            {{#primary_author}}<span class="blog-author">by {{name}}</span>{{/primary_author}}
+                            <a href="{{url}}" class="blog-more">Read More <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </div>
+                </article>
+                {{/foreach}}
+            </div>
+
+            <p class="blog-empty" id="blog-empty">No articles match your search.</p>
+
+            <nav class="pagination" id="blog-pager" hidden>
+                <button class="btn btn-outline pg-prev" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Newer</button>
+                <span class="page-number" id="blog-pageinfo"></span>
+                <button class="btn btn-outline pg-next" type="button">Older <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </nav>
+
+            {{else}}
+            <p class="empty-note">No blog posts published yet. Add posts tagged <strong>blog</strong> to see them here.</p>
+            {{/if}}
+        {{/get}}
+    </div>
+</section>

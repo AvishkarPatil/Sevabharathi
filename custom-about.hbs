@@ -1,0 +1,171 @@
+{{!< default}}
+{{#post}}
+
+{{!-- Hero --}}
+<header class="page-hero center">
+    <div class="container">
+        <div class="page-hero-inner reveal">
+            <nav class="breadcrumb"><a href="{{@site.url}}">Home</a> <span>/</span> <span>{{title}}</span></nav>
+            <span class="eyebrow center">Since 2004</span>
+            <h1>{{title}}</h1>
+            {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>A vibrant organisation empowering lives through social inclusion and self-reliance across coastal Karnataka.</p>{{/if}}
+        </div>
+    </div>
+</header>
+
+{{!-- Who We Are --}}
+<section class="section">
+    <div class="container">
+        <div class="split">
+            <div class="split-media reveal">
+                <div class="ww-media" data-media="{{@custom.about_media_url}}" data-fallback="{{#if @site.cover_image}}{{img_url @site.cover_image size="l"}}{{/if}}">
+                    <span class="ww-accent"></span>
+                    <div class="ww-frame"><div class="ww-ph"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7-11-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div></div>
+                    <div class="ww-badge"><span class="ww-badge-num">21+</span><span class="ww-badge-txt">Years of<br>service</span></div>
+                </div>
+            </div>
+            <div class="split-body reveal reveal-delay-1">
+                <span class="eyebrow">Who We Are</span>
+                <h2>Restoring dignity, one life at a time</h2>
+                <div class="post-content">{{content}}</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- Vision / Mission / Goal --}}
+<section class="section bg-soft">
+    <div class="container">
+        <div class="section-head center reveal">
+            <span class="eyebrow center">Our Purpose</span>
+            <h2>Vision, Mission &amp; Goal</h2>
+        </div>
+        <div class="grid grid-3">
+            <div class="feature-card reveal">
+                <span class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/></svg></span>
+                <h3>Vision</h3>
+                <p>A vibrant organisation that empowers lives through social inclusion and supports self-reliance.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-1">
+                <span class="feature-icon blue"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+                <h3>Mission</h3>
+                <p>Empower persons with spinal cord injury and rural women to lead healthy, dignified lives through rehabilitation, livelihood and health services.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-2">
+                <span class="feature-icon teal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span>
+                <h3>Goal</h3>
+                <p>Provide rehabilitation &amp; health services to 1,000 rural, economically backward people and persons with spinal cord injury by 2027.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- Values --}}
+<section class="section">
+    <div class="container">
+        <div class="section-head center reveal">
+            <span class="eyebrow center">What Drives Us</span>
+            <h2>Our core values</h2>
+        </div>
+        <div class="values-grid">
+            <div class="vcard reveal">
+                <span class="vcard-ic"><img src="{{asset "about-icons/respect.png"}}" alt="Respect"></span>
+                <h3>Respect</h3>
+                <p>We honour the dignity, choices and worth of every person we serve.</p>
+            </div>
+            <div class="vcard reveal reveal-delay-1">
+                <span class="vcard-ic"><img src="{{asset "about-icons/empathy.png"}}" alt="Empathy"></span>
+                <h3>Empathy</h3>
+                <p>We listen with compassion and walk alongside those we support.</p>
+            </div>
+            <div class="vcard reveal reveal-delay-2">
+                <span class="vcard-ic"><img src="{{asset "about-icons/quality.png"}}" alt="Quality"></span>
+                <h3>Quality</h3>
+                <p>We deliver the best possible care, training and rehabilitation.</p>
+            </div>
+            <div class="vcard reveal reveal-delay-3">
+                <span class="vcard-ic"><img src="{{asset "about-icons/collabration.png"}}" alt="Collaboration"></span>
+                <h3>Collaboration</h3>
+                <p>We work hand in hand with communities, partners and donors.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- Where We Serve --}}
+<section class="section bg-soft serve">
+    <div class="container">
+        <div class="serve-grid">
+            <div class="serve-text reveal">
+                <span class="eyebrow">Where We Serve</span>
+                <h2>Serving across <span class="text-grad">seven districts</span> of Karnataka</h2>
+                <p>From our centres in Dakshina Kannada, we reach communities across coastal and western Karnataka — identifying, rehabilitating and empowering those who need us most.</p>
+                <div class="serve-stats">
+                    <div class="serve-stat"><span class="num" data-target="7">7</span><span class="lbl">Districts served</span></div>
+                    <div class="serve-stat"><span class="num" data-target="833">833</span><span class="lbl">Beneficiaries reached</span></div>
+                </div>
+                <a href="/impact/" class="btn btn-outline" style="margin-top:28px;">See our impact
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+            <div class="serve-map reveal reveal-delay-1">
+                <img src="{{#if @custom.serve_map}}{{@custom.serve_map}}{{else}}{{asset "about-icons/karnataka-map.png"}}{{/if}}" alt="Districts of Karnataka served by Seva Bharathi Kanyady" loading="lazy" />
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- Our Journey (animated timeline + photo stack) --}}
+<section class="section journey">
+    <div class="container">
+        <div class="journey-head reveal">
+            <h2>Our journey</h2>
+            <p>Here's the story of how we got here, and the lives we have changed along the way.</p>
+        </div>
+        <div class="journey-grid">
+            <div class="journey-timeline" id="journey-timeline">
+                <div class="jt-track"><div class="jt-line"></div><div class="jt-progress" id="jt-progress"></div></div>
+                <div class="jt-items">
+                    {{#get "posts" filter="tag:milestones" limit="100" order="published_at asc" as |milestones|}}
+                        {{#if milestones}}
+                            {{#foreach milestones}}
+                            <div class="jt-item" data-img="{{#if feature_image}}{{img_url feature_image size="m"}}{{/if}}">
+                                <span class="jt-dot"></span>
+                                <div class="jt-text"><h3 class="jt-year">{{title}}</h3><p class="jt-desc">{{excerpt words="32"}}</p></div>
+                            </div>
+                            {{/foreach}}
+                        {{else}}
+                            <div class="jt-item" data-img=""><span class="jt-dot"></span><div class="jt-text"><h3 class="jt-year">2004</h3><p class="jt-desc">Seva Bharathi established in Belthangady, Dakshina Kannada.</p></div></div>
+                            <div class="jt-item" data-img=""><span class="jt-dot"></span><div class="jt-text"><h3 class="jt-year">2006</h3><p class="jt-desc">Sabalini / Shri Durga Matru Mandali launched for women empowerment.</p></div></div>
+                            <div class="jt-item" data-img=""><span class="jt-dot"></span><div class="jt-text"><h3 class="jt-year">2008</h3><p class="jt-desc">Arogyam programme launched for a healthy and safe society.</p></div></div>
+                            <div class="jt-item" data-img=""><span class="jt-dot"></span><div class="jt-text"><h3 class="jt-year">2012</h3><p class="jt-desc">Registered under the Indian Trust Act.</p></div></div>
+                            <div class="jt-item" data-img=""><span class="jt-dot"></span><div class="jt-text"><h3 class="jt-year">2018</h3><p class="jt-desc">Sevadhama Spinal Cord Rehabilitation Centre established at Southadka.</p></div></div>
+                            <div class="jt-item" data-img=""><span class="jt-dot"></span><div class="jt-text"><h3 class="jt-year">2020</h3><p class="jt-desc">Honoured with the Uthishta Seva Puraskar State Award.</p></div></div>
+                            <div class="jt-item" data-img=""><span class="jt-dot"></span><div class="jt-text"><h3 class="jt-year">2022</h3><p class="jt-desc">State Award by the Department of Differently Abled &amp; Senior Citizens.</p></div></div>
+                            <div class="jt-item" data-img=""><span class="jt-dot"></span><div class="jt-text"><h3 class="jt-year">2025</h3><p class="jt-desc">Byndoor Wound Care &amp; Rehabilitation Centre and Sevanikethana office inaugurated.</p></div></div>
+                        {{/if}}
+                    {{/get}}
+                </div>
+            </div>
+            <div class="journey-stack" aria-hidden="true">
+                <div class="js-sticky" id="journey-cards"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- CTA --}}
+<section class="section cta-banner">
+    <div class="container">
+        <div class="cta-card reveal">
+            <h2>Be part of the journey</h2>
+            <p>Explore our programmes or reach out to learn how you can help us serve more lives.</p>
+            <div class="cta-actions">
+                <a href="/programs/" class="btn btn-light btn-lg">Our Programs</a>
+                <a href="/contact/" class="btn btn-ghost-light btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{/post}}
