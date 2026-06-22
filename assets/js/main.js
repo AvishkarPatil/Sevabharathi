@@ -34,6 +34,7 @@
     initTeamTabs();
     initProgramContent();
     initGallery();
+    initEditorCards();
   });
 
   /* ---------- Dropdown nav (items whose label starts with "-" become children) ---------- */
@@ -1136,6 +1137,65 @@
   /* ---------- Program pages: split page body ----------     line 1  -> About heading (.prog-about-h)
      line 2  -> About paragraph (.prog-about-p)
      line 3+ -> full-width extra box after focus area (.prog-extra) */
+  /* Pick the highest-resolution URL for a Ghost image: prefer the largest
+     candidate in srcset, fall back to src (handles lazy/low-res src values). */
+  function bestImgSrc(im) {
+    var ss = im.getAttribute('srcset');
+    if (ss) {
+      var best = '', bestW = -1;
+      ss.split(',').forEach(function (part) {
+        var bits = part.trim().split(/\s+/);
+        var url = bits[0];
+        var w = bits[1] ? parseInt(bits[1], 10) : 0;
+        if (url && w >= bestW) { bestW = w; best = url; }
+      });
+      if (best) return best;
+    }
+    return im.getAttribute('src') || '';
+  }
+
+  /* ---------- Ghost editor cards: reliable native players + toggle ---------- */
+  function initEditorCards() {
+    var scope = document.querySelector('.post-content');
+    if (!scope) return;
+
+    // Video cards -> strip Ghost custom player chrome, use native controls
+    scope.querySelectorAll('.kg-video-card').forEach(function (card) {
+      var v = card.querySelector('video');
+      if (!v) return;
+      v.setAttribute('controls', '');
+      v.setAttribute('playsinline', '');
+      v.removeAttribute('style');
+      var ov = card.querySelector('.kg-video-overlay');
+      if (ov) ov.remove();
+      var pc = card.querySelector('.kg-video-player-container');
+      if (pc) pc.remove();
+    });
+
+    // Audio cards -> strip custom controls, use native audio controls
+    scope.querySelectorAll('.kg-audio-card').forEach(function (card) {
+      var a = card.querySelector('audio');
+      if (!a) return;
+      a.setAttribute('controls', '');
+      var player = card.querySelector('.kg-audio-player');
+      if (player) player.remove();
+    });
+
+    // Toggle cards -> own click handler (clone heading to drop any stale listeners)
+    scope.querySelectorAll('.kg-toggle-card').forEach(function (card) {
+      if (!card.getAttribute('data-kg-toggle-state')) card.setAttribute('data-kg-toggle-state', 'close');
+      var head = card.querySelector('.kg-toggle-heading');
+      if (!head) return;
+      var fresh = head.cloneNode(true);
+      head.parentNode.replaceChild(fresh, head);
+      fresh.style.cursor = 'pointer';
+      fresh.addEventListener('click', function () {
+        var open = card.getAttribute('data-kg-toggle-state') === 'open';
+        card.setAttribute('data-kg-toggle-state', open ? 'close' : 'open');
+      });
+    });
+  }
+
   function initProgramContent() {
     var src = document.querySelector('.prog-source');
     if (!src) return;
@@ -1163,10 +1223,14 @@
       var galCards = extraBody.querySelectorAll('.kg-gallery-card');
       if (galCards.length) {
         var gsource = pg.querySelector('.gallery-source');
+        var seen = {};
         Array.prototype.forEach.call(galCards, function (card) {
           card.querySelectorAll('img').forEach(function (im) {
-            var s = im.getAttribute('src');
-            if (s) { var ni = document.createElement('img'); ni.src = s; gsource.appendChild(ni); }
+            var s = bestImgSrc(im);
+            if (s && !seen[s]) {
+              seen[s] = 1;
+              var ni = document.createElement('img'); ni.src = s; gsource.appendChild(ni);
+            }
           });
           if (card.parentNode) card.parentNode.removeChild(card);
         });

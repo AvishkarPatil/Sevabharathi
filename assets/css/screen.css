@@ -635,8 +635,6 @@ p { color: var(--color-text); }
 .timeline-year { font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem; color: var(--color-primary); margin-bottom: 4px; }
 .timeline-card p { color: var(--color-text-muted); font-size: 0.92rem; }
 
-/* ---------- 20. (Team card styles consolidated into REDESIGN LAYER 29) ---------- */
-
 /* ---------- 21. Legal / Registration Cards ---------- */
 .legal-card { background:#fff; border:1px solid var(--color-border); border-radius: var(--radius-card); padding: 26px 24px; transition: var(--transition); display:flex; gap:16px; align-items:flex-start; }
 .legal-card:hover { box-shadow: var(--shadow-card); transform: translateY(-5px); border-color: transparent; }
@@ -859,10 +857,6 @@ body { top: 0 !important; }
   .reveal { opacity: 1; transform: none; }
   .marquee-track { animation: none; }
 }
-
-/* ============================================================
-   REDESIGN LAYER — premium homepage + global polish
-   ============================================================ */
 
 /* ---------- Hero Slider ---------- */
 .hero-slider {
@@ -1100,11 +1094,6 @@ body { top: 0 !important; }
 .activity-detail-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card); margin-bottom: 36px; }
 .activity-detail-img img { width: 100%; aspect-ratio: 21/8; object-fit: cover; }
 
-/* ============================================================
-   REDESIGN LAYER 2 — programs row, png impact, headers,
-   supporters, gallery, about collage, angled footer
-   ============================================================ */
-
 /* ---------- Varied section headers ---------- */
 .shead-split { display: grid; grid-template-columns: 1fr auto; gap: 36px; align-items: flex-end; margin-bottom: 46px; }
 .shead-split .sh-left h2 { max-width: 16ch; }
@@ -1237,11 +1226,6 @@ body { top: 0 !important; }
 }
 @media (max-width: 480px) { .footer-right { grid-template-columns: 1fr; } }
 
-/* ============================================================
-   REDESIGN LAYER 3 — divider header, programs v3, impact grid,
-   supporters slider, staggered collage, testimonial slider
-   ============================================================ */
-
 /* ---------- Divider section header ---------- */
 .shead-divider { text-align: center; margin-bottom: 14px; }
 .shead-divider .dv { display: inline-flex; align-items: center; gap: 20px; font-weight: 600; font-size: 0.82rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-primary); }
@@ -1352,10 +1336,6 @@ body { top: 0 !important; }
   .tslide .tslide-tab { opacity: 0; }
 }
 
-/* ============================================================
-   REDESIGN LAYER 4 — fixes: programs, logos, impact glass
-   ============================================================ */
-
 /* ---------- Programs — clean & robust (authoritative) ---------- */
 .programs-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: stretch; }
 .pcard { position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(20,18,16,0.06); border-radius: 24px; overflow: hidden; box-shadow: 0 14px 38px rgba(20,18,16,0.06); transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), box-shadow 0.45s ease; }
@@ -1407,10 +1387,6 @@ body { top: 0 !important; }
 @media (max-width: 1024px) { .impact-icons-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .impact-icons-grid { grid-template-columns: repeat(2, 1fr); gap: 14px !important; } }
 
-/* ============================================================
-   REDESIGN LAYER 5 — testimonials (exact) + about collage (exact)
-   ============================================================ */
-
 /* ---------- Testimonials header (left aligned, light) ---------- */
 .t-head { max-width: 1000px; margin-bottom: 36px; }
 .t-title { font-family: var(--font-body); font-weight: 300; font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--color-dark); }
@@ -1455,9 +1431,6 @@ body { top: 0 !important; }
 .collage-ph.g1 { background: var(--grad-cool); } .collage-ph.g2 { background: var(--grad-warm); } .collage-ph.g3 { background: linear-gradient(135deg,#1E6BB8,#2BA98B); }
 @media (max-width: 600px) { .collage { min-height: 470px; } .collage-img { border-width: 4px; } }
 
-/* ============================================================
-   REDESIGN LAYER 6 — about collage exact geometry
-   ============================================================ */
 .collage { position: relative; width: 100%; aspect-ratio: 1 / 1; min-height: 0; }
 .collage-img { position: absolute; overflow: hidden; border: 8px solid #fff; border-radius: 0; box-shadow: 0 12px 34px rgba(20,18,16,0.14); background: var(--color-bg-muted); }
 .collage-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -1466,9 +1439,6 @@ body { top: 0 !important; }
 .collage-img.c3 { left: 62%; top: 48%; width: 24%; height: 34%; right: auto; bottom: auto; z-index: 30; }
 @media (max-width: 600px) { .collage-img { border-width: 5px; } }
 
-/* ============================================================
-   REDESIGN LAYER 7 — Programs hover-reveal cards (cool palette)
-   ============================================================ */
 .programs-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
 .pcard {
   position: relative;
@@ -1508,10 +1478,6 @@ body { top: 0 !important; }
   .pcard .pcard-desc { opacity: 1; transform: none; }
 }
 
-/* ============================================================
-   REDESIGN LAYER 8 — programs polish + bigger about collage
-   ============================================================ */
-
 /* Programs: bigger image, thinner frame, richer placeholder */
 .pcard { height: 400px; padding: 20px; }
 .pcard:hover { height: 480px; }
@@ -1533,10 +1499,6 @@ body { top: 0 !important; }
 
 /* About page (custom-about) — make the collage prominent */
 .about-collage-section .collage { max-width: 720px; margin: 0 auto; }
-
-/* ============================================================
-   REDESIGN LAYER 9 — about balance + NEW clean programs
-   ============================================================ */
 
 /* About — balanced, bigger collage, no awkward side gaps */
 .about-snapshot-grid { grid-template-columns: 1.08fr 0.92fr; gap: 56px; align-items: center; }
@@ -1574,9 +1536,6 @@ body { top: 0 !important; }
 .prog:hover .prog-link svg { transform: translateX(4px); }
 @media (max-width: 920px) { .programs-row { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
 
-/* ============================================================
-   REDESIGN LAYER 10 — supporters: height-fit logos, edge fade, 2 rows
-   ============================================================ */
 .logo-slider { position: relative; }
 .logo-slider::before, .logo-slider::after { content: ""; position: absolute; top: 0; bottom: 0; width: 150px; z-index: 3; pointer-events: none; }
 .logo-slider::before { left: 0; background: linear-gradient(90deg, var(--color-bg) 12%, rgba(255,255,255,0) 100%); }
@@ -1594,9 +1553,6 @@ body { top: 0 !important; }
 
 @media (max-width: 600px) { .logo-tile { height: 104px; min-width: 134px; padding: 20px 26px; } .logo-slider::before, .logo-slider::after { width: 70px; } }
 
-/* ============================================================
-   REDESIGN LAYER 11 — full-height hero, section gap fixes
-   ============================================================ */
 /* Hero fills the first screen (no white strip) */
 .hero-slider { height: 100vh; min-height: 600px; }
 @supports (height: 100svh) { .hero-slider { height: 100svh; } }
@@ -1611,11 +1567,6 @@ body { top: 0 !important; }
 
 /* collapse double white gap between stacked sections */
 .section.flush-top { padding-top: 0 !important; }
-
-/* ============================================================
-   REDESIGN LAYER 12 — supporters heading, glass programs,
-   bigger about collage, narrower glassy navbar
-   ============================================================ */
 
 /* "Our Supporters" — bigger & bold */
 .shead-divider .dv { font-family: var(--font-heading); font-size: clamp(1.3rem, 2.6vw, 1.9rem); font-weight: 800; letter-spacing: 0.06em; text-transform: none; color: var(--color-dark); }
@@ -1660,16 +1611,9 @@ body { top: 0 !important; }
 .nav-capsule { max-width: 1080px; background: rgba(255,255,255,0.60); -webkit-backdrop-filter: blur(24px) saturate(180%); backdrop-filter: blur(24px) saturate(180%); }
 .site-header.scrolled .nav-capsule { max-width: 950px; background: rgba(255,255,255,0.78); -webkit-backdrop-filter: blur(28px) saturate(180%); backdrop-filter: blur(28px) saturate(180%); }
 
-/* ============================================================
-   REDESIGN LAYER 13 — footer logo white box
-   ============================================================ */
 .footer-left .f-logo { margin-bottom: 18px; }
 .f-logo-box { display: inline-flex; align-items: center; justify-content: center; background: #fff; padding: 12px 18px; border-radius: 14px; box-shadow: 0 8px 22px rgba(0,0,0,0.18); }
 .footer-left .f-logo-box img { height: 46px; width: auto; display: block; filter: none; margin: 0; }
-
-/* ============================================================
-   REDESIGN LAYER 14 — about collage fill, newsletters + PDF modal
-   ============================================================ */
 
 /* About collage — fill column edges, move right image down */
 .about-snapshot-grid { grid-template-columns: 1.3fr 0.85fr; gap: 50px; align-items: center; }
@@ -1710,9 +1654,6 @@ body { top: 0 !important; }
 .pdf-modal iframe { flex: 1; width: 100%; border: 0; background: #525659; }
 @media (max-width: 600px) { .pdf-modal { padding: 0; } .pdf-modal-inner { width: 100vw; height: 100vh; border-radius: 0; } }
 
-/* ============================================================
-   REDESIGN LAYER 15 — about gap + collage corner rounding
-   ============================================================ */
 /* less side gap for the home about section only */
 .about-home .container-wide { max-width: 1440px; }
 .about-home .about-snapshot-grid { grid-template-columns: 1.25fr 0.9fr; gap: 56px; }
@@ -1727,10 +1668,6 @@ body { top: 0 !important; }
   .collage-img.c2 { border-top-right-radius: 32px; border-bottom-left-radius: 32px; }
   .collage-img.c3 { border-bottom-right-radius: 32px; }
 }
-
-/* ============================================================
-   REDESIGN LAYER 16 — blog (search + cards) & events
-   ============================================================ */
 
 /* ---------- Blog hero ---------- */
 .archive-hero { position: relative; padding: calc(var(--header-h) + 60px) 0 56px; text-align: center; overflow: hidden;
@@ -1804,16 +1741,10 @@ body { top: 0 !important; }
 .event-meta-row { display: flex; gap: 18px; justify-content: center; color: var(--color-text-muted); font-size: 0.95rem; margin: 4px 0 22px; }
 .event-meta-row span { display: inline-flex; align-items: center; gap: 8px; }
 
-/* ============================================================
-   REDESIGN LAYER 17 — about sizing/spacing tweaks
-   ============================================================ */
 .about-home .container-wide { max-width: 1320px; }
 .about-home .about-snapshot-grid { grid-template-columns: 0.95fr 1.05fr; gap: 42px; }
 @media (max-width: 1024px) { .about-home .about-snapshot-grid { grid-template-columns: 1fr; } .about-home .collage { max-width: 540px; } }
 
-/* ============================================================
-   REDESIGN LAYER 18 — gallery bento (fixed rectangle, responsive)
-   ============================================================ */
 .home-gallery { position: relative; }
 .gallery-source { display: none !important; }
 .gallery-rect { position: relative; }
@@ -1832,10 +1763,6 @@ body { top: 0 !important; }
   .g-item.big { grid-column: span 2; grid-row: span 1; }
   .g-arrow.prev { left: 4px; } .g-arrow.next { right: 4px; }
 }
-
-/* ============================================================
-   REDESIGN LAYER 19 — masonry gallery, logo color, nav flicker, lang fab
-   ============================================================ */
 
 /* Gallery — random/masonry bento (size-based) */
 .gallery-bento { grid-template-rows: none !important; grid-auto-rows: 158px; grid-auto-flow: dense; aspect-ratio: auto !important; }
@@ -1863,9 +1790,6 @@ body { top: 0 !important; }
 .lang-fab-btn svg { color: #fff; }
 .lang-menu { min-width: 150px; }
 
-/* ============================================================
-   REDESIGN LAYER 20 — gallery fixed to 3 rows + slider paging
-   ============================================================ */
 .gallery-bento { grid-template-columns: repeat(4, 1fr) !important; grid-template-rows: repeat(3, 1fr) !important; grid-auto-rows: auto !important; aspect-ratio: 16 / 9 !important; grid-auto-flow: dense; }
 .g-item.big  { grid-column: span 2; grid-row: span 2; }
 .g-item.wide { grid-column: span 2; grid-row: span 1; }
@@ -1875,9 +1799,6 @@ body { top: 0 !important; }
   .g-item.big { grid-row: span 2; }
 }
 
-/* ============================================================
-   REDESIGN LAYER 21 — mobile drawer dropdown (accordion) fix
-   ============================================================ */
 .mobile-drawer .nav-dropdown {
   position: static !important;
   transform: none !important;
@@ -1902,9 +1823,6 @@ body { top: 0 !important; }
 .mobile-drawer .has-dropdown.open > a svg { transform: rotate(180deg) !important; }
 .mobile-drawer .nav-dropdown li a { padding: 12px 16px; font-size: 1rem; }
 
-/* ============================================================
-   REDESIGN LAYER 22 — "Our Journey" animated timeline + photo stack
-   ============================================================ */
 .journey-head { max-width: 560px; margin-bottom: 64px; }
 .journey-head h2 { font-family: var(--font-body); font-weight: 300; font-size: clamp(2rem, 4.6vw, 3.4rem); letter-spacing: -0.02em; color: var(--color-dark); margin-bottom: 14px; }
 .journey-head p { color: var(--color-text-muted); font-size: clamp(1.05rem, 1.6vw, 1.35rem); line-height: 1.6; max-width: 26ch; }
@@ -1942,16 +1860,9 @@ body { top: 0 !important; }
   .journey-stack { display: none; }
 }
 
-/* ============================================================
-   REDESIGN LAYER 23 — journey type sizing
-   ============================================================ */
 .journey-head p { max-width: 44ch; font-size: clamp(1rem, 1.35vw, 1.18rem); line-height: 1.55; }
 .jt-year { font-size: clamp(1.05rem, 1.5vw, 1.25rem); margin-bottom: 6px; }
 .jt-desc { font-size: 0.92rem; line-height: 1.6; }
-
-/* ============================================================
-   REDESIGN LAYER 24 — about: media, values, serve map, journey
-   ============================================================ */
 
 /* journey: bolder title, tighter steps */
 .journey-head h2 { font-weight: 700; }
@@ -1997,10 +1908,6 @@ body { top: 0 !important; }
 .serve-map img { width: 100%; border-radius: 24px; display: block; box-shadow: 0 20px 50px rgba(20,18,16,0.18); }
 @media (max-width: 900px) { .serve-grid { grid-template-columns: 1fr; gap: 32px; } }
 
-/* ============================================================
-   REDESIGN LAYER 25 — program content, impact grids/highlights, team
-   ============================================================ */
-
 /* wide editable program content */
 .program-content .post-content { max-width: 920px; margin: 0 auto; }
 
@@ -2037,10 +1944,6 @@ body { top: 0 !important; }
 .lead-content > :nth-child(n+3) { color: var(--color-text-muted); font-size: 0.98rem; line-height: 1.75; margin: 0 0 12px; }
 @media (max-width: 760px) { .lead-card { grid-template-columns: 1fr; gap: 22px; } .lead-card:nth-child(even) .lead-photo { order: 0; } .lead-photo { max-width: 320px; } }
 
-/* ============================================================
-   REDESIGN LAYER 29 — team member cards GLOBAL (any template /
-   any wrapper: .team-content OR .post-content), + smaller hero
-   ============================================================ */
 .team-page-hero h1 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
 
 .team-category-bar { margin: 0 0 38px; }
@@ -2440,3 +2343,370 @@ body { top: 0 !important; }
 
 /* ---------- Post page — sidebar not sticky (show fully), body always visible ---------- */
 .post-layout .post-content.reveal { opacity: 1; transform: none; }
+
+/* ---------- Mobile drawer — align dropdown arrows to the right ---------- */
+.mobile-drawer .nav > li > a,
+.mobile-drawer .has-dropdown > a {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.mobile-drawer .has-dropdown > a svg { flex-shrink: 0; width: 16px; height: 16px; margin: 0; }
+.mobile-drawer .has-dropdown.open > a { background: var(--color-bg-soft); color: var(--color-primary); }
+.mobile-drawer .nav-dropdown li a { display: block; }
+
+
+/* ---------- Ghost default editor (Koenig) cards — full styling ---------- */
+.post-content :where(.kg-card) { margin-top: 2rem; margin-bottom: 2rem; }
+
+/* File card */
+.post-content .kg-file-card {
+  display: block;
+  width: 100%;
+}
+.post-content .kg-file-card a.kg-file-card-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 18px 22px;
+  background: #fff;
+  box-shadow: var(--shadow-xs);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: var(--transition);
+}
+.post-content .kg-file-card a.kg-file-card-container:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+  border-color: rgba(232,88,26,0.4);
+}
+.post-content .kg-file-card-contents { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.post-content .kg-file-card-title { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--color-dark); line-height: 1.3; }
+.post-content .kg-file-card-caption { font-size: 0.9rem; color: var(--color-text-muted); margin-top: 4px; }
+.post-content .kg-file-card-metadata { font-size: 0.82rem; color: var(--color-text-muted); margin-top: 8px; }
+.post-content .kg-file-card-filename { font-weight: 500; }
+.post-content .kg-file-card-filesize { position: relative; padding-left: 16px; }
+.post-content .kg-file-card-filesize::before { content: "•"; position: absolute; left: 5px; }
+.post-content .kg-file-card-icon {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  width: 54px; height: 54px;
+  border-radius: 12px;
+  background: rgba(232,88,26,0.10);
+}
+.post-content .kg-file-card-icon svg { width: 26px; height: 26px; color: var(--color-primary); }
+.post-content .kg-file-card-medium .kg-file-card-title { font-size: 1rem; }
+
+/* Button card */
+.post-content .kg-button-card { display: flex; }
+.post-content .kg-button-card.kg-align-center { justify-content: center; }
+.post-content .kg-button-card.kg-align-left { justify-content: flex-start; }
+.post-content .kg-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.98rem;
+  padding: 14px 30px; border-radius: var(--radius-btn);
+  text-decoration: none; line-height: 1; transition: var(--transition);
+}
+.post-content .kg-btn-accent { background: var(--color-primary); color: #fff; }
+.post-content .kg-btn-accent:hover { background: var(--color-primary-dark); transform: translateY(-3px); box-shadow: 0 12px 26px rgba(232,88,26,0.28); }
+
+/* Header card (v1) */
+.post-content .kg-header-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  padding: clamp(50px, 7vw, 90px) 32px;
+  border-radius: var(--radius-card);
+  background-size: cover; background-position: center;
+}
+.post-content .kg-header-card.kg-style-dark { background: var(--color-dark); color: #fff; }
+.post-content .kg-header-card.kg-style-light { background: var(--color-bg-soft); }
+.post-content .kg-header-card.kg-style-accent { background: var(--color-primary); color: #fff; }
+.post-content .kg-header-card h2.kg-header-card-header { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 14px; }
+.post-content .kg-header-card h3.kg-header-card-subheader { font-weight: 400; font-size: 1.1rem; opacity: 0.9; margin: 0 0 24px; }
+.post-content .kg-header-card .kg-header-card-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 600; padding: 14px 30px; border-radius: var(--radius-btn);
+  background: #fff; color: var(--color-dark); text-decoration: none; transition: var(--transition);
+}
+.post-content .kg-header-card .kg-header-card-button:hover { transform: translateY(-3px); }
+
+/* Header card (v2) */
+.post-content .kg-header-card.kg-v2 {
+  padding: clamp(60px, 8vw, 110px) 32px;
+}
+.post-content .kg-header-card.kg-v2 .kg-header-card-heading { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; }
+.post-content .kg-header-card.kg-v2 .kg-header-card-subheading { font-size: 1.15rem; margin-top: 16px; }
+.post-content .kg-header-card.kg-v2 .kg-header-card-button {
+  margin-top: 28px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 600; padding: 14px 30px; border-radius: var(--radius-btn);
+  background: var(--color-primary); color: #fff; text-decoration: none; transition: var(--transition);
+}
+.post-content .kg-header-card.kg-v2 .kg-header-card-button:hover { background: var(--color-primary-dark); transform: translateY(-3px); }
+
+/* Bookmark card */
+.post-content .kg-bookmark-card,
+.post-content .kg-bookmark-card * { box-sizing: border-box; }
+.post-content .kg-bookmark-card a.kg-bookmark-container {
+  display: flex; min-height: 148px;
+  border: 1px solid var(--color-border); border-radius: var(--radius-card);
+  overflow: hidden; background: #fff; text-decoration: none; color: var(--color-text);
+  box-shadow: var(--shadow-xs); transition: var(--transition);
+}
+.post-content .kg-bookmark-card a.kg-bookmark-container:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
+.post-content .kg-bookmark-content { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 22px; flex-grow: 1; order: 0; min-width: 0; }
+.post-content .kg-bookmark-title { font-family: var(--font-heading); font-weight: 700; color: var(--color-dark); line-height: 1.4; }
+.post-content .kg-bookmark-description { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.92rem; color: var(--color-text-muted); margin-top: 8px; }
+.post-content .kg-bookmark-metadata { display: flex; align-items: center; flex-wrap: wrap; margin-top: 14px; font-size: 0.85rem; color: var(--color-dark); }
+.post-content .kg-bookmark-icon { width: 20px; height: 20px; margin-right: 8px; }
+.post-content .kg-bookmark-author::after { content: "•"; margin: 0 8px; color: var(--color-text-muted); }
+.post-content .kg-bookmark-publisher { color: var(--color-text-muted); overflow: hidden; max-width: 240px; white-space: nowrap; text-overflow: ellipsis; }
+.post-content .kg-bookmark-thumbnail { position: relative; flex-grow: 1; min-width: 33%; order: 1; }
+.post-content .kg-bookmark-thumbnail img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; margin: 0; border-radius: 0; }
+
+/* Callout card */
+.post-content .kg-callout-card {
+  display: flex; gap: 12px;
+  padding: 20px 24px; border-radius: var(--radius-sm);
+  background: var(--color-bg-soft); border: 1px solid var(--color-border);
+}
+.post-content .kg-callout-card .kg-callout-emoji { font-size: 1.3rem; line-height: 1.5; }
+.post-content .kg-callout-card .kg-callout-text { font-size: 1rem; line-height: 1.7; }
+.post-content .kg-callout-card-accent { background: rgba(232,88,26,0.08); border-color: rgba(232,88,26,0.25); }
+.post-content .kg-callout-card-blue { background: rgba(30,107,184,0.08); border-color: rgba(30,107,184,0.22); }
+.post-content .kg-callout-card-green { background: rgba(43,169,139,0.10); border-color: rgba(43,169,139,0.25); }
+.post-content .kg-callout-card-grey { background: var(--color-bg-muted); }
+
+/* Toggle card */
+.post-content .kg-toggle-card {
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: 22px 24px; background: #fff;
+}
+.post-content .kg-toggle-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.post-content .kg-toggle-heading-text { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--color-dark); margin: 0; }
+.post-content .kg-toggle-card-icon { width: 22px; height: 22px; color: var(--color-primary); transition: transform 0.2s ease; flex-shrink: 0; }
+.post-content .kg-toggle-card[data-kg-toggle-state="close"] .kg-toggle-content { display: none; }
+.post-content .kg-toggle-card[data-kg-toggle-state="open"] .kg-toggle-card-icon { transform: rotate(180deg); }
+.post-content .kg-toggle-content { margin-top: 14px; color: var(--color-text); }
+
+/* Product card */
+.post-content .kg-product-card .kg-product-card-container {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--color-border); border-radius: var(--radius-card);
+  padding: 24px; background: #fff; box-shadow: var(--shadow-xs);
+}
+.post-content .kg-product-card-image { width: 100%; border-radius: var(--radius-sm); margin: 0 0 18px; }
+.post-content .kg-product-card-title-container { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.post-content .kg-product-card-title { font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; margin: 0; }
+.post-content .kg-product-card-rating { display: inline-flex; gap: 2px; color: var(--color-primary); }
+.post-content .kg-product-card-description { color: var(--color-text-muted); margin: 12px 0 18px; }
+.post-content .kg-product-card-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 600; padding: 13px 28px; border-radius: var(--radius-btn);
+  background: var(--color-primary); color: #fff; text-decoration: none; transition: var(--transition);
+}
+.post-content .kg-product-card-button:hover { background: var(--color-primary-dark); transform: translateY(-3px); }
+
+/* Audio card */
+.post-content .kg-audio-card {
+  display: flex; align-items: center; gap: 16px;
+  border: 1px solid var(--color-border); border-radius: var(--radius-card);
+  padding: 16px 20px; background: #fff; box-shadow: var(--shadow-xs);
+}
+.post-content .kg-audio-thumbnail { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; margin: 0; flex-shrink: 0; }
+.post-content .kg-audio-thumbnail.placeholder { display: flex; align-items: center; justify-content: center; background: rgba(232,88,26,0.10); color: var(--color-primary); }
+.post-content .kg-audio-player-container { flex-grow: 1; min-width: 0; }
+.post-content .kg-audio-title { font-family: var(--font-heading); font-weight: 700; color: var(--color-dark); margin: 0 0 8px; }
+.post-content .kg-audio-card audio { width: 100%; }
+
+/* Signup card */
+.post-content .kg-signup-card {
+  border-radius: var(--radius-card);
+  padding: clamp(36px, 5vw, 64px);
+  background-size: cover; background-position: center;
+}
+.post-content .kg-signup-card.kg-style-accent { background: var(--color-primary); color: #fff; }
+.post-content .kg-signup-card-text { max-width: 640px; }
+.post-content .kg-signup-card h2.kg-signup-card-heading { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin: 0 0 12px; }
+.post-content .kg-signup-card-subheading { font-size: 1.05rem; opacity: 0.92; margin: 0 0 22px; }
+.post-content .kg-signup-card-form { display: flex; gap: 10px; flex-wrap: wrap; max-width: 480px; }
+.post-content .kg-signup-card-input {
+  flex: 1 1 220px; min-width: 0;
+  padding: 14px 18px; border-radius: var(--radius-btn);
+  border: 1px solid var(--color-border); font-family: var(--font-body); font-size: 0.95rem;
+}
+.post-content .kg-signup-card-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 600; padding: 14px 28px; border-radius: var(--radius-btn);
+  background: var(--color-dark); color: #fff; border: 0; cursor: pointer; transition: var(--transition);
+}
+.post-content .kg-signup-card.kg-style-accent .kg-signup-card-button { background: #fff; color: var(--color-primary); }
+.post-content .kg-signup-card-button:hover { transform: translateY(-3px); }
+.post-content .kg-signup-card-success { display: none; }
+
+/* Call to action card */
+.post-content .kg-cta-card {
+  display: flex; flex-direction: column;
+  border-radius: var(--radius-card);
+  padding: clamp(28px, 4vw, 44px);
+}
+.post-content .kg-cta-card.kg-cta-bg-grey { background: var(--color-bg-soft); border: 1px solid var(--color-border); }
+.post-content .kg-cta-card.kg-cta-bg-accent { background: var(--color-primary); color: #fff; }
+.post-content .kg-cta-card-content { display: flex; flex-direction: column; gap: 14px; }
+.post-content .kg-cta-card-text { font-size: 1.1rem; line-height: 1.7; }
+.post-content .kg-cta-card .kg-cta-card-link,
+.post-content .kg-cta-card .kg-cta-button {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 600; padding: 13px 28px; border-radius: var(--radius-btn);
+  background: var(--color-primary); color: #fff; text-decoration: none; transition: var(--transition);
+}
+.post-content .kg-cta-card.kg-cta-bg-accent .kg-cta-button { background: #fff; color: var(--color-primary); }
+.post-content .kg-cta-card .kg-cta-button:hover { transform: translateY(-3px); }
+.post-content .kg-cta-card-sponsor-label { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; margin-bottom: 10px; }
+
+/* Embed / web preview cards keep 16:9 video sizing already defined above;
+   generic embeds (tweets etc.) just center */
+.post-content .kg-embed-card { align-items: center; }
+
+/* Blockquote big variant */
+.post-content .kg-blockquote-alt { font-size: 1.4rem; font-style: italic; text-align: center; border: 0; padding: 0; color: var(--color-dark); }
+
+/* Responsive: stack file/bookmark cards on small screens */
+@media (max-width: 640px) {
+  .post-content .kg-bookmark-card a.kg-bookmark-container { flex-direction: column; }
+  .post-content .kg-bookmark-thumbnail { min-height: 160px; order: 0; }
+  .post-content .kg-bookmark-content { order: 1; }
+  .post-content .kg-file-card a.kg-file-card-container { flex-direction: column-reverse; align-items: flex-start; gap: 14px; }
+}
+
+/* In-post gallery: neutralise default img margins + add row gap */
+.post-content .kg-gallery-container { gap: 12px; }
+.post-content .kg-gallery-image img { margin: 0; border-radius: 8px; }
+.post-content .kg-gallery-card figcaption,
+.post-content .kg-image-card figcaption,
+.post-content .kg-embed-card figcaption { text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 10px; }
+
+/* ---------- Post cards: keep everything inside the content column ---------- */
+/* The post body sits in a 3-col grid (share | content | sidebar). Ghost's
+   viewport-centred wide/full breakout shifts cards right + overflows here,
+   so neutralise it and let every card wrap the body width. */
+.post-layout .post-content { max-width: 760px; }
+.post-layout .post-content .kg-width-wide,
+.post-layout .post-content .kg-width-full {
+  position: static;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  left: auto; right: auto;
+  transform: none;
+  margin-left: 0; margin-right: 0;
+}
+.post-layout .post-content .kg-width-full { border-radius: var(--radius-card); }
+.post-layout .post-content .kg-width-full img { border-radius: var(--radius-card); }
+
+/* Header & signup cards: fit the column, sensible inner padding */
+.post-content .kg-header-card,
+.post-content .kg-header-card.kg-v2 { padding: clamp(36px, 5vw, 60px) clamp(24px, 4vw, 44px); }
+.post-content .kg-signup-card { padding: clamp(30px, 4vw, 48px); }
+
+/* Native video / audio players sit cleanly in the column */
+.post-content .kg-video-card,
+.post-content .kg-audio-card { width: 100%; }
+.post-content .kg-video-container { position: relative; width: 100%; }
+.post-content .kg-video-card video {
+  display: block; width: 100%; height: auto;
+  border-radius: var(--radius-card); background: #000; margin: 0;
+}
+.post-content .kg-audio-card audio { width: 100%; height: 42px; }
+
+/* Gallery: keep within the column and a touch smaller */
+.post-content .kg-gallery-card .kg-gallery-container { max-width: 100%; }
+.post-content .kg-gallery-row { gap: 10px; }
+.post-content .kg-gallery-image img { max-height: 320px; border-radius: 8px; }
+
+/* ---------- Post images: three tiers (regular < wide < full) ---------- */
+/* full = entire body column width */
+.post-content .kg-width-full,
+.post-content .kg-width-full img { width: 100%; }
+
+/* wide = a bit bigger than regular, slightly inset from full */
+.post-content .kg-width-wide { width: 90%; margin-left: auto; margin-right: auto; }
+.post-content .kg-width-wide img { width: 100%; }
+
+/* regular = a touch smaller than wide, centred */
+.post-content .kg-image-card:not(.kg-width-wide):not(.kg-width-full),
+.post-content figure.kg-image-card:not(.kg-width-wide):not(.kg-width-full) {
+  width: 78%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.post-content .kg-image-card:not(.kg-width-wide):not(.kg-width-full) img { width: 100%; }
+
+/* shared: block layout, rounded, auto height */
+.post-content .kg-image-card img,
+.post-content .kg-width-wide img,
+.post-content .kg-width-full img,
+.post-content > img,
+.post-content p > img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  border-radius: var(--radius-card);
+}
+
+@media (max-width: 640px) {
+  /* on small screens everything goes full width for readability */
+  .post-content .kg-width-wide,
+  .post-content .kg-image-card:not(.kg-width-wide):not(.kg-width-full) { width: 100%; }
+}
+
+/* ---------- Hero slider — match reference UI: no zoom, left-aligned, crossfade ---------- */
+/* kill the image zoom entirely (static background, crossfade only) */
+.hero-slide-bg,
+.hero-slide.active .hero-slide-bg {
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* left-side dark gradient backing (reference) */
+.hero-slide::after {
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.40) 40%, transparent 100%);
+}
+
+/* one-sided, left-aligned content (reference proportions) */
+.hero-slide-inner { align-items: center; }
+.hero-slide-content { max-width: 700px; text-align: left; }
+.hero-slide-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.hero-slide-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 550px;
+  margin-bottom: 2.5rem;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+/* ---------- Hero dots: bottom-left, aligned to content (reference) ---------- */
+.hero-slider-nav {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--container);
+  padding: 0 var(--gutter);
+  justify-content: flex-start;
+  bottom: 40px;
+}
+.hero-dot { background: rgba(255,255,255,0.35); }
+.hero-dot.active { background: var(--color-primary); width: 54px; }
+@media (max-width: 1024px) { .hero-slider-nav { bottom: 32px; } }
