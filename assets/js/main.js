@@ -1380,22 +1380,39 @@
 
   // sets the google translate cookie + triggers the hidden select
   function setLanguage(lang) {
-    function fire() {
-      var combo = document.querySelector('.goog-te-combo');
-      if (combo) {
-        combo.value = lang;
-        combo.dispatchEvent(new Event('change'));
-        return true;
+    var host = window.location.hostname;
+
+    function domainScopes() {
+      var scopes = [''];
+      var parts = host.split('.');
+      for (var i = 0; i < parts.length; i++) {
+        var d = parts.slice(i).join('.');
+        if (d) { scopes.push(d, '.' + d); }
       }
-      return false;
+      return scopes;
     }
-    if (!fire()) {
-      // set cookie fallback then reload
-      var host = window.location.hostname;
-      var val = '/en/' + lang;
-      document.cookie = 'googtrans=' + val + ';path=/';
-      document.cookie = 'googtrans=' + val + ';domain=.' + host + ';path=/';
-      setTimeout(function () { if (!fire()) window.location.reload(); }, 400);
+    function writeCookie(value, expire) {
+      domainScopes().forEach(function (d) {
+        var base = 'googtrans=' + value + ';path=/' + (d ? ';domain=' + d : '');
+        document.cookie = base + (expire ? ';expires=' + expire + ';max-age=0' : '');
+      });
+    }
+    function clearCookie() { writeCookie('', 'Thu, 01 Jan 1970 00:00:00 GMT'); }
+
+    if (lang === 'en') {
+      clearCookie();
+      window.location.reload();
+      return;
+    }
+
+    clearCookie();
+    writeCookie('/en/' + lang);
+    var combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+    } else {
+      setTimeout(function () { window.location.reload(); }, 300);
     }
   }
 
