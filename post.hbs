@@ -1,6 +1,6 @@
 {{!< default}}
 {{#post}}
-<article class="post {{post_class}}">
+<article class="post {{post_class}}"{{#has tag="event"}} data-event-date="{{custom_excerpt}}"{{/has}}>
 
 {{#has tag="event"}}
     {{!-- EVENT DETAIL --}}
@@ -13,7 +13,8 @@
                 <div class="event-meta-row">
                     <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>{{date published_at format="DD MMMM YYYY"}}</span>
                 </div>
-                {{#if og_title}}<a href="{{og_title}}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Register Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>{{/if}}
+                {{#if og_title}}<a href="{{og_title}}" target="_blank" rel="noopener" class="btn btn-primary btn-lg ev-register">Register Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>{{/if}}
+                <span class="ev-completed-badge" hidden>Completed</span>
             </div>
         </div>
     </header>
@@ -28,7 +29,7 @@
         </div>
     </section>
     {{#if og_title}}
-    <section class="section-sm">
+    <section class="section-sm ev-register-cta">
         <div class="container">
             <div class="cta-card reveal">
                 <h2>Ready to join us?</h2>

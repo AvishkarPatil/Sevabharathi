@@ -35,6 +35,10 @@
     initProgramContent();
     initGallery();
     initEditorCards();
+    initDonateTable();
+    initLegalCards();
+    initAboutDynamic();
+    initEventStatus();
   });
 
   /* ---------- Dropdown nav (items whose label starts with "-" become children) ---------- */
@@ -711,6 +715,15 @@
     var empty = document.getElementById('ev-empty');
     var today = new Date(); today.setHours(0, 0, 0, 0);
     cards.forEach(function (c) { c.setAttribute('data-cat', eventCategory(c.getAttribute('data-date'), today)); });
+    // past events: hide Register, show "Event Completed"
+    cards.forEach(function (c) {
+      if (c.getAttribute('data-cat') === 'past') {
+        var reg = c.querySelector('.ev-register');
+        if (reg) { reg.hidden = true; reg.style.display = 'none'; }
+        var done = c.querySelector('.ev-completed');
+        if (done) done.hidden = false;
+      }
+    });
     // upcoming/ongoing soonest-first, past most-recent-first
     cards.sort(function (a, b) {
       var da = a.getAttribute('data-date') || '', db = b.getAttribute('data-date') || '';
@@ -1084,8 +1097,14 @@
 
   /* ---------- Impact page: build stat grid from a body table (id | name | number) ---------- */
   function initImpactGrid() {
-    var src = document.querySelector('.impact-source');
-    var grid = document.getElementById('impact-grid');
+    buildIconGrid(document.querySelector('.impact-source'), document.getElementById('impact-grid'));
+    buildIconGrid(document.querySelector('.arogyam-impact-source'), document.getElementById('arogyam-impact-grid'));
+    buildIconGrid(document.querySelector('.sevadhama-impact-source'), document.getElementById('sevadhama-impact-grid'));
+    buildIconGrid(document.querySelector('.sabalini-impact-source'), document.getElementById('sabalini-impact-grid'));
+  }
+
+  /* build a stat grid from a body table (id | name | number) into a grid element */
+  function buildIconGrid(src, grid) {
     if (!src || !grid) return;
     var base = (grid.getAttribute('data-iconbase') || '').split('?')[0].replace(/[^/]*$/, '');
     function txt(c) { return (c.textContent || '').trim(); }
@@ -1105,6 +1124,103 @@
       if (html) grid.innerHTML = html;
     }
     if (src.parentNode) src.parentNode.removeChild(src);
+  }
+
+  /* ---------- Donate: sponsorship table from a tagged post (item | amount) ---------- */
+  function initDonateTable() {
+    var src = document.querySelector('.ds-source');
+    var table = document.getElementById('ds-table');
+    if (!src || !table) return;
+    function txt(c) { return (c.textContent || '').trim(); }
+    var rows = src.querySelectorAll('table tr');
+    var body = table.querySelector('tbody') || table;
+    var html = '';
+    Array.prototype.forEach.call(rows, function (tr) {
+      var cells = tr.querySelectorAll('td');
+      if (cells.length < 2) return; // skip header rows
+      var item = txt(cells[0]), amount = txt(cells[1]);
+      if (!item || !amount) return;
+      html += '<tr><td>' + item + '</td><td>' + amount + '</td></tr>';
+    });
+    if (html) body.innerHTML = html;     // otherwise keep the static fallback rows
+    if (src.parentNode) src.parentNode.removeChild(src);
+  }
+
+  /* ---------- Legal: cards from the page body table (type | value) ---------- */
+  function initLegalCards() {
+    var src = document.querySelector('.legal-source');
+    var grid = document.getElementById('legal-grid');
+    if (!src || !grid) return;
+    function txt(c) { return (c.textContent || '').trim(); }
+    var icon = '<span class="lc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+    var rows = src.querySelectorAll('table tr');
+    var html = '';
+    Array.prototype.forEach.call(rows, function (tr) {
+      var cells = tr.querySelectorAll('td');
+      if (cells.length < 2) return; // skip header rows
+      var type = txt(cells[0]), value = txt(cells[1]);
+      if (!type || !value) return;
+      html += '<div class="legal-card reveal in">' + icon + '<div><div class="lc-type">' + type + '</div><div class="lc-value">' + value + '</div></div></div>';
+    });
+    if (html) grid.innerHTML = html;     // otherwise keep the static fallback cards
+    if (src.parentNode) src.parentNode.removeChild(src);
+  }
+
+  /* ---------- About: stats (years/districts/beneficiaries) + Vision/Mission/Goal ---------- */
+  function initAboutDynamic() {
+    var statSrc = document.querySelector('.about-stats-source');
+    if (statSrc) {
+      var serveStats = document.querySelectorAll('.serve-stats .serve-stat');
+      var badge = document.querySelector('.ww-badge-num');
+      var heading = document.querySelector('.serve-districts-word');
+      function setStat(matchTxt, value) {
+        Array.prototype.forEach.call(serveStats, function (st) {
+          var lbl = (st.querySelector('.lbl') ? st.querySelector('.lbl').textContent : '').toLowerCase();
+          if (lbl.indexOf(matchTxt) !== -1) {
+            var n = st.querySelector('.num');
+            if (n) { n.setAttribute('data-target', value); n.textContent = value; }
+          }
+        });
+      }
+      Array.prototype.forEach.call(statSrc.querySelectorAll('table tr'), function (tr) {
+        var cells = tr.querySelectorAll('td');
+        if (cells.length < 2) return;
+        var label = (cells[0].textContent || '').trim().toLowerCase();
+        var value = (cells[1].textContent || '').trim();
+        if (!value) return;
+        if (label.indexOf('year') !== -1 && badge) { badge.textContent = value; }
+        if (label.indexOf('district') !== -1) {
+          setStat('district', value);
+          if (heading) heading.textContent = value + ' districts';
+        }
+        if (label.indexOf('benefic') !== -1) { setStat('benefic', value); }
+      });
+      if (statSrc.parentNode) statSrc.parentNode.removeChild(statSrc);
+    }
+
+    var purposeSrc = document.querySelector('.about-purpose-source');
+    if (purposeSrc) {
+      var lines = Array.prototype.slice.call(purposeSrc.querySelectorAll('p, li'))
+        .map(function (n) { return (n.textContent || '').trim(); })
+        .filter(Boolean);
+      var targets = document.querySelectorAll('.vmg-text');
+      lines.forEach(function (line, i) { if (targets[i]) targets[i].textContent = line; });
+      if (purposeSrc.parentNode) purposeSrc.parentNode.removeChild(purposeSrc);
+    }
+  }
+
+  /* ---------- Events: hide "Register" on the past event detail page ---------- */
+  function initEventStatus() {
+    var article = document.querySelector('article.post[data-event-date]');
+    if (!article) return;
+    var ds = (article.getAttribute('data-event-date') || '').trim();
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    if (eventCategory(ds, today) !== 'past') return;
+    article.querySelectorAll('.ev-register').forEach(function (el) { el.hidden = true; el.style.display = 'none'; });
+    var badge = article.querySelector('.ev-completed-badge');
+    if (badge) badge.hidden = false;
+    var cta = article.querySelector('.ev-register-cta');
+    if (cta) cta.style.display = 'none';
   }
 
   /* ---------- Home About "Who We Are" from a post ----------

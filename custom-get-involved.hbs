@@ -47,27 +47,17 @@
     <div class="container">
         <div class="section-head center reveal gi-head"><span class="eyebrow center">Apply Directly</span><h2>Enquire for a programme</h2></div>
         <div class="gi-prog-row">
-            <a href="/sevadhama/" class="gi-prog reveal">
-                <div class="gi-prog-text">
-                    <h3>Sevadhama</h3>
-                    <p>Residential rehabilitation, community-based rehab and livelihood support for spinal cord injury survivors.</p>
-                </div>
-                <span class="gi-prog-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </a>
-            <a href="/sabalini/" class="gi-prog reveal reveal-delay-1">
-                <div class="gi-prog-text">
-                    <h3>Sabalini</h3>
-                    <p>Free tailoring camps and skill-development programmes for rural women across Belthangady taluk.</p>
-                </div>
-                <span class="gi-prog-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </a>
-            <a href="/arogyam/" class="gi-prog reveal reveal-delay-2">
-                <div class="gi-prog-text">
-                    <h3>Arogyam</h3>
-                    <p>Health camps, 24/7 ambulance services and blood donation support for rural communities.</p>
-                </div>
-                <span class="gi-prog-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </a>
+            {{#get "pages" filter="tag:home-programs" limit="12" order="published_at asc" as |programs|}}
+                {{#foreach programs}}
+                <a href="{{#if og_title}}{{og_title}}{{else}}{{url}}{{/if}}" class="gi-prog reveal">
+                    <div class="gi-prog-text">
+                        <h3>{{title}}</h3>
+                        <p>{{excerpt words="24"}}</p>
+                    </div>
+                    <span class="gi-prog-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a>
+                {{/foreach}}
+            {{/get}}
         </div>
         <div style="text-align:center; margin-top:40px;" class="reveal"><a href="/contact/" class="btn btn-outline btn-lg">Talk to our team</a></div>
     </div>

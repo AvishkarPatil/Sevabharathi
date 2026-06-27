@@ -86,7 +86,8 @@
     <div class="container">
         <div class="section-head center reveal"><span class="eyebrow center">Arogyam Impact</span><h2>Health, delivered</h2></div>
         <div class="impact-grid-wrap reveal" style="max-width:960px;margin:0 auto;">
-            <div class="impact-icons-grid ig-4">
+            <div class="arogyam-impact-source" hidden>{{#get "posts" filter="tag:arogyam-impact" limit="1" as |rows|}}{{#foreach rows}}{{content}}{{/foreach}}{{/get}}</div>
+            <div class="impact-icons-grid ig-4" id="arogyam-impact-grid" data-iconbase="{{asset "impact-icons/search.png"}}">
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/ambulance.png"}}" alt="Ambulance" loading="lazy"></span><span class="num" data-target="600">600+</span><span class="lbl">Ambulance Service Calls</span></div>
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/medical-camp.png"}}" alt="Health camps" loading="lazy"></span><span class="num" data-target="300">300</span><span class="lbl">Health Awareness Camps</span></div>
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/blood-units.png"}}" alt="Blood collected" loading="lazy"></span><span class="num" data-target="11,399">11,399</span><span class="lbl">Units of Blood Collected</span></div>

@@ -1,6 +1,9 @@
 {{!< default}}
 {{#post}}
 
+<div class="about-stats-source" hidden>{{#get "posts" filter="tag:about-stats" limit="1" as |rows|}}{{#foreach rows}}{{content}}{{/foreach}}{{/get}}</div>
+<div class="about-purpose-source" hidden>{{#get "posts" filter="tag:about-purpose" limit="1" as |rows|}}{{#foreach rows}}{{content}}{{/foreach}}{{/get}}</div>
+
 {{!-- Hero --}}
 <header class="page-hero center">
     <div class="container">
@@ -21,8 +24,7 @@
                 <div class="ww-media" data-media="{{@custom.about_media_url}}" data-fallback="{{#if @site.cover_image}}{{img_url @site.cover_image size="l"}}{{/if}}">
                     <span class="ww-accent"></span>
                     <div class="ww-frame"><div class="ww-ph"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7-11-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div></div>
-                    <div class="ww-badge"><span class="ww-badge-num">21+</span><span class="ww-badge-txt">Years of<br>service</span></div>
-                </div>
+                    <div class="ww-badge"><span class="ww-badge-num">21+</span><span class="ww-badge-txt">Years of<br>service</span></div>                </div>
             </div>
             <div class="split-body reveal reveal-delay-1">
                 <span class="eyebrow">Who We Are</span>
@@ -44,17 +46,17 @@
             <div class="feature-card reveal">
                 <span class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/></svg></span>
                 <h3>Vision</h3>
-                <p>A vibrant organisation that empowers lives through social inclusion and supports self-reliance.</p>
+                <p class="vmg-text">A vibrant organisation that empowers lives through social inclusion and supports self-reliance.</p>
             </div>
             <div class="feature-card reveal reveal-delay-1">
                 <span class="feature-icon blue"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
                 <h3>Mission</h3>
-                <p>Empower persons with spinal cord injury and rural women to lead healthy, dignified lives through rehabilitation, livelihood and health services.</p>
+                <p class="vmg-text">Empower persons with spinal cord injury and rural women to lead healthy, dignified lives through rehabilitation, livelihood and health services.</p>
             </div>
             <div class="feature-card reveal reveal-delay-2">
                 <span class="feature-icon teal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span>
                 <h3>Goal</h3>
-                <p>Provide rehabilitation &amp; health services to 1,000 rural, economically backward people and persons with spinal cord injury by 2027.</p>
+                <p class="vmg-text">Provide rehabilitation &amp; health services to 1,000 rural, economically backward people and persons with spinal cord injury by 2027.</p>
             </div>
         </div>
     </div>
@@ -98,7 +100,7 @@
         <div class="serve-grid">
             <div class="serve-text reveal">
                 <span class="eyebrow">Where We Serve</span>
-                <h2>Serving across <span class="text-grad">seven districts</span> of Karnataka</h2>
+                <h2>Serving across <span class="text-grad serve-districts-word">seven districts</span> of Karnataka</h2>
                 <p>From our centres in Dakshina Kannada, we reach communities across coastal and western Karnataka — identifying, rehabilitating and empowering those who need us most.</p>
                 <div class="serve-stats">
                     <div class="serve-stat"><span class="num" data-target="7">7</span><span class="lbl">Districts served</span></div>

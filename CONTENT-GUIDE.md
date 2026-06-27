@@ -297,3 +297,39 @@ Available icon ids: `ambulance`, `blood-donation-camp`, `blood-units`, `diabetic
 - **Facebook title** (Post settings → Facebook card) is used as a **link URL**: the hero slide button and the event "Register" button.
 - **Meta title / Meta description / Canonical URL** (Post settings → Meta data) fill the label, text, and link of the home focus cards and the program "Apply/Enquire" band.
 - **Excerpt** holds the **event date** (`YYYY-MM-DD`) for event posts, and the intro text on the donate page.
+
+## Newly configurable content (no developer needed)
+
+All of the items below have a built-in fallback, so the site keeps showing the current content until you add the source. Numbers and amounts are shown exactly as you type them (commas and a trailing "+" are kept).
+
+### Donate page — sponsorship amounts
+Create a post tagged `donate-sponsorship`. In its body add a two-column table: first column = what the donation sponsors, second column = the amount (e.g. `₹2,000`). Each row becomes a row in the sponsorship table on the Donate page.
+
+### Legal Status page
+Put a two-column table in the Legal page body itself: first column = the registration type/label, second column = the number/value. Each row becomes a legal card. Leave the body empty to keep the built-in cards.
+
+### About page — statistics
+Create a post tagged `about-stats`. In its body add a two-column table (label | value). The label decides where the value goes:
+- a label containing **year** → the "Years of service" badge
+- a label containing **district** → the "Districts served" stat and the "… districts" heading
+- a label containing **benefic** → the "Beneficiaries reached" stat
+
+### About page — Vision, Mission & Goal
+Create a post tagged `about-purpose`. In its body write three paragraphs: first = Vision, second = Mission, third = Goal. They fill the three purpose cards in order.
+
+### Arogyam page — impact statistics
+Create a post tagged `arogyam-impact`. In its body add a three-column table: `id | name | number`, where `id` matches an icon filename in `assets/impact-icons` (without `.png`). Works exactly like the Impact page table.
+
+### Per-programme statistics (Sevadhama / Sabalini / Arogyam)
+Each programme page has its own "by the numbers" section, driven the same way:
+- Sevadhama → post tagged `sevadhama-impact`
+- Sabalini → post tagged `sabalini-impact`
+- Arogyam → post tagged `arogyam-impact`
+
+In each post's body add a three-column table `id | name | number` (same format and icon system as the Impact page). Until the post exists, the page shows its built-in numbers.
+
+### Programmes (no longer fixed at three)
+Programmes are pulled from pages tagged `home-programs`. Add a new page with that tag and it automatically appears on the Home page, Programs page, the Impact page "By Programme" section, and the Get Involved enquiry list — ordered by publish date. Each card links to the page, or to the page's Facebook title (`og_title`) field if you put a URL there.
+
+### Past events
+Events are sorted by the date in the post Excerpt (`YYYY-MM-DD`). Once that date is in the past, the "Register" button is automatically hidden on both the events list and the event page, and an "Event Completed" status is shown instead.

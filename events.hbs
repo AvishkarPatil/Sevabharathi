@@ -29,7 +29,8 @@
                     <p class="ev-desc"></p>
                     <div class="ev-actions">
                         <a href="{{url}}" class="btn btn-outline">More Details</a>
-                        <a href="{{#if og_title}}{{og_title}}{{else}}{{url}}{{/if}}" class="btn btn-primary"{{#if og_title}} target="_blank" rel="noopener"{{/if}}>Register</a>
+                        <a href="{{#if og_title}}{{og_title}}{{else}}{{url}}{{/if}}" class="btn btn-primary ev-register"{{#if og_title}} target="_blank" rel="noopener"{{/if}}>Register</a>
+                        <span class="ev-completed" hidden>Completed</span>
                     </div>
                 </div>
                 <div class="ev-source">{{content}}</div>

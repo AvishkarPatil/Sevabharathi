@@ -87,7 +87,8 @@
     <div class="container">
         <div class="section-head center reveal"><span class="eyebrow center">Sabalini Impact</span><h2>What we have achieved</h2></div>
         <div class="impact-grid-wrap reveal" style="max-width:760px;margin:0 auto;">
-            <div class="impact-icons-grid ig-3">
+            <div class="sabalini-impact-source" hidden>{{#get "posts" filter="tag:sabalini-impact" limit="1" as |rows|}}{{#foreach rows}}{{content}}{{/foreach}}{{/get}}</div>
+            <div class="impact-icons-grid ig-3" id="sabalini-impact-grid" data-iconbase="{{asset "impact-icons/search.png"}}">
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/sewing-machine.png"}}" alt="Tailoring camps" loading="lazy"></span><span class="num" data-target="36">36</span><span class="lbl">Tailoring Camps Held</span></div>
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/rural-women.png"}}" alt="Women trained" loading="lazy"></span><span class="num" data-target="967">967</span><span class="lbl">Women Trained</span></div>
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/women-empowered.png"}}" alt="Families empowered" loading="lazy"></span><span class="num" data-target="1,107">1,107</span><span class="lbl">Families Empowered</span></div>

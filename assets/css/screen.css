@@ -2710,3 +2710,61 @@ body { top: 0 !important; }
 .hero-dot { background: rgba(255,255,255,0.35); }
 .hero-dot.active { background: var(--color-primary); width: 54px; }
 @media (max-width: 1024px) { .hero-slider-nav { bottom: 32px; } }
+
+/* ---------- Legal / Registration cards — refined look ---------- */
+.legal-card {
+  position: relative;
+  padding: 26px 24px 26px 26px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  align-items: center;
+}
+.legal-card::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.legal-card:hover { box-shadow: var(--shadow-card); transform: translateY(-4px); border-color: var(--color-border); }
+.legal-card:hover::before { opacity: 1; }
+.legal-card .lc-icon {
+  width: 50px; height: 50px; border-radius: 14px;
+  background: rgba(232,88,26,0.10); color: var(--color-primary);
+  transition: var(--transition);
+}
+.legal-card:hover .lc-icon { background: var(--color-primary); color: #fff; }
+.legal-card .lc-type {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--color-text-muted); margin-bottom: 6px; line-height: 1.4;
+}
+.legal-card .lc-value { font-size: 1.08rem; letter-spacing: 0.01em; }
+
+/* ---------- Impact "By Programme" — clamp description on the shared program cards ---------- */
+.prog-clamp .program-card-body p {
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* ---------- Get Involved enquiry cards — clamp description, even rows ---------- */
+.gi-prog-text { min-width: 0; }
+.gi-prog-text p {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* ---------- "Completed" status — matches the button it replaces, different colour ---------- */
+.ev-completed,
+.ev-completed-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-body); font-weight: 600;
+  border-radius: var(--radius-btn); line-height: 1; white-space: nowrap;
+  background: var(--color-bg-muted); color: var(--color-text-muted);
+  border: 0; cursor: default;
+}
+.ev-completed[hidden], .ev-completed-badge[hidden] { display: none !important; }
+/* events listing: match the small .ev-actions .btn */
+.ev-actions .ev-completed { padding: 12px 14px; font-size: 0.9rem; width: 100%; }
+/* event detail page: match .btn-lg */
+.ev-completed-badge { padding: 17px 38px; font-size: 1.05rem; }

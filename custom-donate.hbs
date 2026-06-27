@@ -62,7 +62,8 @@
 
             <p class="ds-note">Join us in this noble mission and help restore independence, dignity, and hope to those living with spinal cord injuries.</p>
 
-            <table class="ds-table">
+            <div class="ds-source" hidden>{{#get "posts" filter="tag:donate-sponsorship" limit="1" as |rows|}}{{#foreach rows}}{{content}}{{/foreach}}{{/get}}</div>
+            <table class="ds-table" id="ds-table">
                 <tbody>
                     <tr><td>Sponsor a medical kit to SCI for one month</td><td>₹2,000</td></tr>
                     <tr><td>Sponsor a caretaker for a SCI patient for one month</td><td>₹3,000</td></tr>

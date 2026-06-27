@@ -107,7 +107,8 @@
     <div class="container">
         <div class="section-head center reveal"><span class="eyebrow center">Programme Impact</span><h2>Sevadhama by the numbers</h2></div>
         <div class="impact-grid-wrap reveal" style="max-width:960px;margin:0 auto;">
-            <div class="impact-icons-grid ig-4">
+            <div class="sevadhama-impact-source" hidden>{{#get "posts" filter="tag:sevadhama-impact" limit="1" as |rows|}}{{#foreach rows}}{{content}}{{/foreach}}{{/get}}</div>
+            <div class="impact-icons-grid ig-4" id="sevadhama-impact-grid" data-iconbase="{{asset "impact-icons/search.png"}}">
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/search.png"}}" alt="Identified" loading="lazy"></span><span class="num" data-target="833">833</span><span class="lbl">Lives Identified</span></div>
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/rehabilitation.png"}}" alt="Rehabilitated" loading="lazy"></span><span class="num" data-target="279">279</span><span class="lbl">Lives Rehabilitated</span></div>
                 <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/wheelchair.png"}}" alt="Wheelchairs" loading="lazy"></span><span class="num" data-target="405">405</span><span class="lbl">Wheelchairs Distributed</span></div>

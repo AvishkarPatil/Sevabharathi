@@ -138,22 +138,16 @@
             </div>
         </div>
         <div class="programs-row">
-            {{#get "pages" filter="tag:home-programs" limit="3" order="published_at asc" as |programs|}}
-                {{#if programs}}
-                    {{#foreach programs}}
-                    <a href="{{#if og_title}}{{og_title}}{{else}}{{url}}{{/if}}" class="pg c{{@number}} reveal{{#if @last}} reveal-delay-2{{else}}{{#unless @first}} reveal-delay-1{{/unless}}{{/if}}">
-                        <div class="pg-bg">{{#if feature_image}}<img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />{{else}}<div class="pg-bg-ph"></div>{{/if}}</div>
-                        <div class="pg-panel">
-                            <h3 class="pg-title">{{title}} <span class="pg-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h3>
-                            <p class="pg-desc">{{excerpt words="22"}}</p>
-                        </div>
-                    </a>
-                    {{/foreach}}
-                {{else}}
-                    <a href="/sevadhama/" class="pg c1 reveal"><div class="pg-bg"><div class="pg-bg-ph"></div></div><div class="pg-panel"><h3 class="pg-title">Sevadhama <span class="pg-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h3><p class="pg-desc">Residential 12-week rehabilitation for persons with spinal cord injury — therapy, life skills, wheelchair training and livelihood support.</p></div></a>
-                    <a href="/sabalini/" class="pg c2 reveal reveal-delay-1"><div class="pg-bg"><div class="pg-bg-ph"></div></div><div class="pg-panel"><h3 class="pg-title">Sabalini <span class="pg-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h3><p class="pg-desc">Rural women empowerment through free tailoring camps, skill development and self-employment support since 2006.</p></div></a>
-                    <a href="/arogyam/" class="pg c3 reveal reveal-delay-2"><div class="pg-bg"><div class="pg-bg-ph"></div></div><div class="pg-panel"><h3 class="pg-title">Arogyam <span class="pg-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h3><p class="pg-desc">Community health camps, blood donation drives and 24/7 affordable ambulance services since 2008.</p></div></a>
-                {{/if}}
+            {{#get "pages" filter="tag:home-programs" limit="6" order="published_at asc" as |programs|}}
+                {{#foreach programs}}
+                <a href="{{#if og_title}}{{og_title}}{{else}}{{url}}{{/if}}" class="pg c{{@number}} reveal{{#if @last}} reveal-delay-2{{else}}{{#unless @first}} reveal-delay-1{{/unless}}{{/if}}">
+                    <div class="pg-bg">{{#if feature_image}}<img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />{{else}}<div class="pg-bg-ph"></div>{{/if}}</div>
+                    <div class="pg-panel">
+                        <h3 class="pg-title">{{title}} <span class="pg-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h3>
+                        <p class="pg-desc">{{excerpt words="22"}}</p>
+                    </div>
+                </a>
+                {{/foreach}}
             {{/get}}
         </div>
     </div>

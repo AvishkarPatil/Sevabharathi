@@ -52,25 +52,22 @@
             <span class="eyebrow center">By Programme</span>
             <h2>Impact across our three pillars</h2>
         </div>
-        <div class="grid grid-3">
-            <div class="feature-card reveal">
-                <span class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 11h14M7 11V7a5 5 0 0110 0v4M6 11l1 9h10l1-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <h3>Sevadhama</h3>
-                <p>Residential rehabilitation restoring mobility and dignity — wheelchairs, mobility aids, home accessibility and livelihood support for PwSCI.</p>
-                <a href="/sevadhama/" class="btn-link" style="margin-top:14px;">Explore programme <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-            <div class="feature-card reveal reveal-delay-1">
-                <span class="feature-icon blue"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.5 3.1-6 7-6s7 2.5 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-                <h3>Sabalini</h3>
-                <p>Free tailoring camps and skill development empowering rural women to earn with dignity and lift their families out of poverty.</p>
-                <a href="/sabalini/" class="btn-link" style="margin-top:14px;">Explore programme <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-            <div class="feature-card reveal reveal-delay-2">
-                <span class="feature-icon teal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l2-5 4 10 2-5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <h3>Arogyam</h3>
-                <p>Health camps, blood donation drives and 24/7 ambulance services keeping rural communities healthy and safe.</p>
-                <a href="/arogyam/" class="btn-link" style="margin-top:14px;">Explore programme <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
+        <div class="grid grid-3 prog-clamp">
+            {{#get "pages" filter="tag:home-programs" limit="12" order="published_at asc" as |programs|}}
+                {{#foreach programs}}
+                <a href="{{#if og_title}}{{og_title}}{{else}}{{url}}{{/if}}" class="program-card reveal">
+                    <div class="program-card-img">
+                        {{#if feature_image}}<img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />{{else}}<div class="program-card-ph"><svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.5C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7C19 16.65 12 21 12 21z" stroke="currentColor" stroke-width="1.5"/></svg></div>{{/if}}
+                        <span class="program-card-num">{{@number}}</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>{{title}}</h3>
+                        <p>{{excerpt words="24"}}</p>
+                        <span class="btn-link">Explore programme <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </div>
+                </a>
+                {{/foreach}}
+            {{/get}}
         </div>
     </div>
 </section>
