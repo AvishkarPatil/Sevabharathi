@@ -4,3 +4,7 @@ node_modules/
 Thumbs.db
 npm-debug.log*
 yarn-error.log*
+
+# Internal docs (not shipped to the repo)
+CONTENT-GUIDE.md
+docs/*.html
