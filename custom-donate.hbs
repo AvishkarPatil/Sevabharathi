@@ -37,11 +37,11 @@
                     <div class="qr-ph"><svg width="48" height="48" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M14 14h3v3M21 14v7h-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
                 {{/if}}
                 {{#if @custom.donate_upi_id}}<p style="font-weight:600; color:var(--color-dark);">UPI: {{@custom.donate_upi_id}}</p>{{/if}}
-                {{#if @custom.donate_external_url}}
-                <a href="{{@custom.donate_external_url}}" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="margin-top:20px; width:100%;">Donate Online
+                {{#if meta_title}}{{#if canonical_url}}
+                <button type="button" class="btn btn-primary btn-lg donate-online-btn" data-href="{{canonical_url}}" style="margin-top:20px; width:100%;">{{meta_title}}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-                {{/if}}
+                </button>
+                {{/if}}{{/if}}
             </div>
         </div>
     </div>
@@ -84,9 +84,9 @@
     <div class="container">
         <div class="section-head center reveal dn-head"><span class="eyebrow center">Your Impact</span><h2>What your donation funds</h2></div>
         <div class="grid grid-3">
-            <div class="feature-card reveal"><span class="donate-ic ic-a"><img src="{{asset "donate/rehabilitation.png"}}" alt="Rehabilitation" loading="lazy" /></span><h3>Rehabilitation</h3><p>Funds wheelchairs, calipers, therapy and a 12-week residential programme for spinal cord injury survivors.</p></div>
-            <div class="feature-card reveal reveal-delay-1"><span class="donate-ic ic-b"><img src="{{asset "donate/women-livelihoods.png"}}" alt="Women's Livelihoods" loading="lazy" /></span><h3>Women's Livelihoods</h3><p>Supports free tailoring camps and skill development that help rural women earn with dignity.</p></div>
-            <div class="feature-card reveal reveal-delay-2"><span class="donate-ic ic-c"><img src="{{asset "donate/community-health.png"}}" alt="Community Health" loading="lazy" /></span><h3>Community Health</h3><p>Powers health camps, blood donation drives and 24/7 ambulance services for rural communities.</p></div>
+            <div class="feature-card reveal"><span class="donate-ic ic-a"><img src="{{asset "donate/rehabilitation.svg"}}" alt="Rehabilitation" loading="lazy" /></span><h3>Rehabilitation</h3><p>Funds wheelchairs, calipers, therapy and a 12-week residential programme for spinal cord injury survivors.</p></div>
+            <div class="feature-card reveal reveal-delay-1"><span class="donate-ic ic-b"><img src="{{asset "donate/women-livelihoods.svg"}}" alt="Women's Livelihoods" loading="lazy" /></span><h3>Women's Livelihoods</h3><p>Supports free tailoring camps and skill development that help rural women earn with dignity.</p></div>
+            <div class="feature-card reveal reveal-delay-2"><span class="donate-ic ic-c"><img src="{{asset "donate/community-health.svg"}}" alt="Community Health" loading="lazy" /></span><h3>Community Health</h3><p>Powers health camps, blood donation drives and 24/7 ambulance services for rural communities.</p></div>
         </div>
     </div>
 </section>

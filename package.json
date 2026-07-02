@@ -39,7 +39,6 @@
       "contact_map_embed_url": { "type": "text", "default": "" },
 
       "donate_upi_id": { "type": "text", "default": "" },
-      "donate_external_url": { "type": "text", "default": "https://www.sociallygood.com" },
 
       "whatsapp_number": { "type": "text", "default": "", "description": "WhatsApp number with country code, e.g. 919945491241" },
 

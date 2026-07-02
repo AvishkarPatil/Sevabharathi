@@ -38,7 +38,6 @@ Found under **Settings → Design → Customize → Site-wide**. These are the o
 | Contact address (main / southadka / byndoor) | Contact page address cards and footer |
 | Contact map embed url | Map on the contact page |
 | Donate UPI id | UPI line on the donate page |
-| Donate external url | Online donation button link |
 | WhatsApp number | Footer WhatsApp icon (digits with country code) |
 | Home stat (identified / rehabilitated / devices / families / health / blood) | The six numbers in the home "Social Impact" cards |
 
@@ -85,6 +84,7 @@ Create each page, set its slug, and choose its **Template** under Page settings 
 | Stories | Stories |
 | Awards | Awards |
 | Legal Status | Legal |
+| Enquire | Enquire |
 
 ## Navigation
 
@@ -273,7 +273,7 @@ Rules: the Nth button shows the Nth section; the button marked `active` shows fi
 The stats grid is built from a **table** in the Impact page body. Ghost has no built-in table, so add it with a **Markdown card** (`+ → Markdown`) or an **HTML card** (`+ → HTML`).
 
 Use **three columns: id, name, number**.
-- **id** — chooses the icon. It must match an icon file name in the theme's `assets/impact-icons` folder, without `.png`.
+- **id** — chooses the icon. It must match an icon file name in the theme's `assets/impact-icons` folder, without `.svg`.
 - **name** — the label shown under the number.
 - **number** — the figure shown (you can include commas or `+`, e.g. `13,500+`).
 
@@ -288,7 +288,7 @@ Markdown card example:
 
 Add one row per stat. Remove the table to fall back to the built-in set. If an `id` has no matching icon file, that card simply shows no icon.
 
-Available icon ids: `ambulance`, `blood-donation-camp`, `blood-units`, `diabetic-machines`, `doctors-office`, `grocery-kit`, `home-accessibility`, `hospital-visited`, `livelihood-cases`, `medical-assistance`, `medical-camp`, `medical-intervention`, `medical-kit`, `mobility-aids`, `panchayats-visited`, `rehabilitation`, `rural-women`, `search`, `self-employed`, `serving-health`, `sewing-machine`, `solar-inverter`, `surgical-assistance`, `taluka-covered`, `team`, `walking-stick`, `wheelchair`, `women-empowered`. (To add a new icon, drop a PNG into `assets/impact-icons` and use its file name as the id.)
+Available icon ids: `ambulance`, `blood-donation-camp`, `blood-units`, `diabetic-machines`, `doctors-office`, `grocery-kit`, `home-accessibility`, `hospital-visited`, `livelihood-cases`, `medical-assistance`, `medical-camp`, `medical-intervention`, `medical-kit`, `mobility-aids`, `panchayats-visited`, `rehabilitation`, `rural-women`, `search`, `self-employed`, `serving-health`, `sewing-machine`, `solar-inverter`, `surgical-assistance`, `taluka-covered`, `team`, `walking-stick`, `wheelchair`, `women-empowered`. (To add a new icon, drop an SVG into `assets/impact-icons` and use its file name as the id.)
 
 ---
 
@@ -318,7 +318,7 @@ Create a post tagged `about-stats`. In its body add a two-column table (label | 
 Create a post tagged `about-purpose`. In its body write three paragraphs: first = Vision, second = Mission, third = Goal. They fill the three purpose cards in order.
 
 ### Arogyam page — impact statistics
-Create a post tagged `arogyam-impact`. In its body add a three-column table: `id | name | number`, where `id` matches an icon filename in `assets/impact-icons` (without `.png`). Works exactly like the Impact page table.
+Create a post tagged `arogyam-impact`. In its body add a three-column table: `id | name | number`, where `id` matches an icon filename in `assets/impact-icons` (without `.svg`). Works exactly like the Impact page table.
 
 ### Per-programme statistics (Sevadhama / Sabalini / Arogyam)
 Each programme page has its own "by the numbers" section, driven the same way:
@@ -333,3 +333,22 @@ Programmes are pulled from pages tagged `home-programs`. Add a new page with tha
 
 ### Past events
 Events are sorted by the date in the post Excerpt (`YYYY-MM-DD`). Once that date is in the past, the "Register" button is automatically hidden on both the events list and the event page, and an "Event Completed" status is shown instead.
+
+### Donate page — "Donate Online" button
+The button under the QR code is controlled by the Donate page's Meta data:
+- **Meta title** → the button label (e.g. "Donate Online").
+- **Canonical URL** → the donation link; it opens in a new tab.
+
+The button only appears when **both** are filled. It behaves like a real button (it does not look like a plain hyperlink and does not reveal the raw URL on hover).
+
+### Enquire page
+Create a page tagged/slugged `enquire` with the **Enquire** template. It has a fuller form than Contact (name, phone, email, city, interest, role, message).
+
+On each programme page, the Apply/Enquire band's **first button** is dynamic:
+- **Link** → `/enquire/` by default, or the page's **Canonical URL** if set (e.g. an external Google Form).
+- **Label** → "Enquire Now" / "Apply Now" by default, or the page's **Meta title** if set.
+
+The band's **second button** is a **Donate** button linking to `/donate/`. The Get Involved Support / Volunteer buttons also point to the enquire page (you can deep-link with `?for=` to preselect the interest, e.g. `/enquire/?for=Volunteer`).
+
+### Newsletter subscribe
+The **Subscribe to newsletter** button (Newsletters and Annual Reports pages) opens a popup with a Ghost members email form. On the **home page**, first-time visitors who are not already subscribed see this popup once (after a short delay). This uses Ghost's built-in Members feature — enable it under **Settings → Membership**, and set up your newsletter under **Settings → Email newsletter**.

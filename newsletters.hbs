@@ -12,9 +12,15 @@
     <div class="container">
         {{#get "posts" filter="tag:newsletter" limit="100" order="published_at desc" as |items|}}
             {{#if items}}
-            <div class="nl-filter reveal">
-                <label for="nl-year">Filter by year</label>
-                <div class="filter-select"><select id="nl-year"><option value="all">All years</option></select></div>
+            <div class="nl-toolbar reveal">
+                <div class="nl-filter">
+                    <label for="nl-year">Filter by year</label>
+                    <div class="filter-select"><select id="nl-year"><option value="all">All years</option></select></div>
+                </div>
+                <button type="button" class="btn btn-subscribe" data-nl-open>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Subscribe to newsletter
+                </button>
             </div>
             <div class="nl-grid" id="nl-grid">
                 {{#foreach items}}

@@ -63,12 +63,12 @@
     <div class="container">
         <div class="apply-band reveal">
             <div class="apply-band-text">
-                <h2>{{#if meta_title}}{{meta_title}}{{else}}Enquire for Sevadhama{{/if}}</h2>
+                <h2>Enquire for Sevadhama</h2>
                 <p>{{#if meta_description}}{{meta_description}}{{else}}Reach out to procure rehabilitation services and facilities for a better, more independent future. We extend unconditional support to help survivors lead a life of dignity and self-reliance.{{/if}}</p>
             </div>
             <div class="apply-band-actions">
-                <a href="{{#if canonical_url}}{{canonical_url}}{{else}}{{@custom.donate_external_url}}{{/if}}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Enquire Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                <a href="/contact/" class="btn btn-outline btn-lg">Contact Us</a>
+                <a href="{{#if canonical_url}}{{canonical_url}}{{else}}/enquire/{{/if}}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">{{#if meta_title}}{{meta_title}}{{else}}Enquire Now{{/if}} <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="/donate/" class="btn btn-outline btn-lg">Donate</a>
             </div>
         </div>
     </div>
@@ -108,11 +108,11 @@
         <div class="section-head center reveal"><span class="eyebrow center">Programme Impact</span><h2>Sevadhama by the numbers</h2></div>
         <div class="impact-grid-wrap reveal" style="max-width:960px;margin:0 auto;">
             <div class="sevadhama-impact-source" hidden>{{#get "posts" filter="tag:sevadhama-impact" limit="1" as |rows|}}{{#foreach rows}}{{content}}{{/foreach}}{{/get}}</div>
-            <div class="impact-icons-grid ig-4" id="sevadhama-impact-grid" data-iconbase="{{asset "impact-icons/search.png"}}">
-                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/search.png"}}" alt="Identified" loading="lazy"></span><span class="num" data-target="833">833</span><span class="lbl">Lives Identified</span></div>
-                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/rehabilitation.png"}}" alt="Rehabilitated" loading="lazy"></span><span class="num" data-target="279">279</span><span class="lbl">Lives Rehabilitated</span></div>
-                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/wheelchair.png"}}" alt="Wheelchairs" loading="lazy"></span><span class="num" data-target="405">405</span><span class="lbl">Wheelchairs Distributed</span></div>
-                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/mobility-aids.png"}}" alt="Mobility aids" loading="lazy"></span><span class="num" data-target="797">797</span><span class="lbl">Mobility &amp; Assistive Devices</span></div>
+            <div class="impact-icons-grid ig-4" id="sevadhama-impact-grid" data-iconbase="{{asset "impact-icons/search.svg"}}">
+                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/search.svg"}}" alt="Identified" loading="lazy"></span><span class="num" data-target="833">833</span><span class="lbl">Lives Identified</span></div>
+                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/rehabilitation.svg"}}" alt="Rehabilitated" loading="lazy"></span><span class="num" data-target="279">279</span><span class="lbl">Lives Rehabilitated</span></div>
+                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/wheelchair.svg"}}" alt="Wheelchairs" loading="lazy"></span><span class="num" data-target="405">405</span><span class="lbl">Wheelchairs Distributed</span></div>
+                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/mobility-aids.svg"}}" alt="Mobility aids" loading="lazy"></span><span class="num" data-target="797">797</span><span class="lbl">Mobility &amp; Assistive Devices</span></div>
             </div>
         </div>
     </div>

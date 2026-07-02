@@ -2768,3 +2768,58 @@ body { top: 0 !important; }
 .ev-actions .ev-completed { padding: 12px 14px; font-size: 0.9rem; width: 100%; }
 /* event detail page: match .btn-lg */
 .ev-completed-badge { padding: 17px 38px; font-size: 1.05rem; }
+
+/* ---------- Hero slider — show only the active slide (no stacking) ---------- */
+.hero-slider .hero-slide { opacity: 0; visibility: hidden; }
+.hero-slider .hero-slide.active { opacity: 1; visibility: visible; }
+
+/* ---------- Subscribe button (solid blue) ---------- */
+.btn-subscribe { background: var(--color-secondary); color: #fff; box-shadow: 0 10px 26px rgba(30,107,184,0.28); }
+.btn-subscribe:hover { background: var(--color-secondary-dark); color: #fff; transform: translateY(-3px); box-shadow: 0 16px 34px rgba(30,107,184,0.36); }
+
+/* ---------- Newsletter toolbar (filter + subscribe) ---------- */
+.nl-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
+.nl-toolbar .nl-filter { margin-bottom: 0; }
+@media (max-width: 560px) { .nl-toolbar { flex-direction: column; align-items: stretch; } .nl-toolbar .btn-subscribe { width: 100%; justify-content: center; } }
+
+/* ---------- Newsletter subscribe popup ---------- */
+.nl-modal { position: fixed; inset: 0; z-index: 3400; background: rgba(15,13,12,0.86); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity 0.3s ease; }
+.nl-modal.open { opacity: 1; visibility: visible; }
+.nl-modal-card { position: relative; width: min(460px, 100%); background: #fff; border-radius: 22px; padding: 42px 34px 28px; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,0.4); transform: translateY(14px) scale(0.98); transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); overflow: hidden; }
+.nl-modal.open .nl-modal-card { transform: none; }
+.nl-modal-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent)); }
+.nl-modal-close { position: absolute; top: 14px; right: 14px; width: 38px; height: 38px; border-radius: 50%; background: var(--color-bg-soft); color: var(--color-dark); font-size: 1.5rem; line-height: 1; display: grid; place-items: center; border: 0; cursor: pointer; }
+.nl-modal-close:hover { background: var(--color-primary); color: #fff; }
+.nl-modal-icon { width: 60px; height: 60px; border-radius: 16px; background: rgba(30,107,184,0.10); color: var(--color-secondary); display: grid; place-items: center; margin: 4px auto 18px; }
+.nl-modal-title { font-size: 1.5rem; margin-bottom: 8px; }
+.nl-modal-sub { color: var(--color-text-muted); font-size: 0.96rem; margin-bottom: 22px; }
+.nl-form .nl-field { display: flex; flex-direction: column; gap: 10px; }
+.nl-input { width: 100%; padding: 14px 18px; border: 1.5px solid var(--color-border); border-radius: 50px; font-family: var(--font-body); font-size: 0.98rem; text-align: center; color: var(--color-text); }
+.nl-input:focus { outline: none; border-color: var(--color-secondary); box-shadow: 0 0 0 3px rgba(30,107,184,0.12); }
+.nl-submit { width: 100%; justify-content: center; }
+.nl-form-error { color: #c0392b; font-size: 0.85rem; margin-top: 10px; min-height: 1em; }
+.nl-form-success { display: none; color: var(--color-accent-dark); font-weight: 600; margin-top: 6px; }
+.nl-form.success .nl-field, .nl-form.success .nl-form-error { display: none; }
+.nl-form.success .nl-form-success { display: block; }
+.nl-form.loading .nl-submit { opacity: 0.6; pointer-events: none; }
+.nl-modal-fine { margin-top: 16px; font-size: 0.8rem; color: var(--color-text-muted); }
+
+/* ---------- Donate "Donate Online" button (real button, no link preview) ---------- */
+.donate-online-btn { border: 0; cursor: pointer; font-family: var(--font-body); }
+
+/* ---------- Enquire page ---------- */
+.enquire-layout { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: 40px; align-items: start; }
+.enquire-aside h2 { font-size: 1.5rem; margin-bottom: 12px; }
+.enquire-aside p { color: var(--color-text-muted); }
+.enquire-contacts { display: grid; gap: 14px; margin-top: 24px; }
+.enquire-contact { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border: 1px solid var(--color-border); border-radius: 14px; background: #fff; transition: var(--transition); color: var(--color-text); }
+.enquire-contact:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
+.ec-icon { width: 42px; height: 42px; border-radius: 11px; background: rgba(232,88,26,0.10); color: var(--color-primary); display: grid; place-items: center; flex-shrink: 0; }
+.ec-label { font-size: 0.8rem; color: var(--color-text-muted); }
+.enquire-form-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 34px; box-shadow: var(--shadow-card); }
+.enquire-form-card h3 { margin-bottom: 20px; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.enquire-form-card .filter-select { width: 100%; }
+.enquire-form-card .filter-select select { width: 100%; height: auto; padding: 13px 44px 13px 16px; border-radius: var(--radius-sm); }
+.enquire-note { margin-top: 14px; font-size: 0.82rem; color: var(--color-text-muted); text-align: center; }
+@media (max-width: 860px) { .enquire-layout { grid-template-columns: 1fr; } .form-grid-2 { grid-template-columns: 1fr; } }

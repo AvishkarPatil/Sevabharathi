@@ -71,12 +71,12 @@
     <div class="container">
         <div class="apply-band reveal">
             <div class="apply-band-text">
-                <h2>{{#if meta_title}}{{meta_title}}{{else}}Apply for Arogyam{{/if}}</h2>
+                <h2>Apply for Arogyam</h2>
                 <p>{{#if meta_description}}{{meta_description}}{{else}}Request health services, an ambulance, or partner with us to organise a health camp or blood donation drive in your community.{{/if}}</p>
             </div>
             <div class="apply-band-actions">
-                <a href="{{#if canonical_url}}{{canonical_url}}{{else}}{{@custom.donate_external_url}}{{/if}}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Apply Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                <a href="/contact/" class="btn btn-outline btn-lg">Contact Us</a>
+                <a href="{{#if canonical_url}}{{canonical_url}}{{else}}/enquire/{{/if}}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">{{#if meta_title}}{{meta_title}}{{else}}Apply Now{{/if}} <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="/donate/" class="btn btn-outline btn-lg">Donate</a>
             </div>
         </div>
     </div>
@@ -87,11 +87,11 @@
         <div class="section-head center reveal"><span class="eyebrow center">Arogyam Impact</span><h2>Health, delivered</h2></div>
         <div class="impact-grid-wrap reveal" style="max-width:960px;margin:0 auto;">
             <div class="arogyam-impact-source" hidden>{{#get "posts" filter="tag:arogyam-impact" limit="1" as |rows|}}{{#foreach rows}}{{content}}{{/foreach}}{{/get}}</div>
-            <div class="impact-icons-grid ig-4" id="arogyam-impact-grid" data-iconbase="{{asset "impact-icons/search.png"}}">
-                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/ambulance.png"}}" alt="Ambulance" loading="lazy"></span><span class="num" data-target="600">600+</span><span class="lbl">Ambulance Service Calls</span></div>
-                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/medical-camp.png"}}" alt="Health camps" loading="lazy"></span><span class="num" data-target="300">300</span><span class="lbl">Health Awareness Camps</span></div>
-                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/blood-units.png"}}" alt="Blood collected" loading="lazy"></span><span class="num" data-target="11,399">11,399</span><span class="lbl">Units of Blood Collected</span></div>
-                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/serving-health.png"}}" alt="Health services" loading="lazy"></span><span class="num" data-target="13,500+">13,500+</span><span class="lbl">Health Services Delivered</span></div>
+            <div class="impact-icons-grid ig-4" id="arogyam-impact-grid" data-iconbase="{{asset "impact-icons/search.svg"}}">
+                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/ambulance.svg"}}" alt="Ambulance" loading="lazy"></span><span class="num" data-target="600">600+</span><span class="lbl">Ambulance Service Calls</span></div>
+                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/medical-camp.svg"}}" alt="Health camps" loading="lazy"></span><span class="num" data-target="300">300</span><span class="lbl">Health Awareness Camps</span></div>
+                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/blood-units.svg"}}" alt="Blood collected" loading="lazy"></span><span class="num" data-target="11,399">11,399</span><span class="lbl">Units of Blood Collected</span></div>
+                <div class="ic-stat"><span class="ic-stat-icon"><img src="{{asset "impact-icons/serving-health.svg"}}" alt="Health services" loading="lazy"></span><span class="num" data-target="13,500+">13,500+</span><span class="lbl">Health Services Delivered</span></div>
             </div>
         </div>
     </div>

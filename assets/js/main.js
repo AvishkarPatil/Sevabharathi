@@ -39,6 +39,9 @@
     initLegalCards();
     initAboutDynamic();
     initEventStatus();
+    initNewsletterModal();
+    initDonateButton();
+    initEnquirePrefill();
   });
 
   /* ---------- Dropdown nav (items whose label starts with "-" become children) ---------- */
@@ -1118,7 +1121,7 @@
         if (cells.length >= 3) { id = txt(cells[0]); name = txt(cells[1]); num = txt(cells[2]); }
         else { id = ''; name = txt(cells[0]); num = txt(cells[1]); }
         if (!name || !num) return;
-        var icon = (id && base) ? '<span class="ic-stat-icon"><img src="' + base + id + '.png" alt="" loading="lazy"></span>' : '';
+        var icon = (id && base) ? '<span class="ic-stat-icon"><img src="' + base + id + '.svg" alt="" loading="lazy"></span>' : '';
         html += '<div class="ic-stat">' + icon + '<span class="num">' + num + '</span><span class="lbl">' + name + '</span></div>';
       });
       if (html) grid.innerHTML = html;
@@ -1221,6 +1224,58 @@
     if (badge) badge.hidden = false;
     var cta = article.querySelector('.ev-register-cta');
     if (cta) cta.style.display = 'none';
+  }
+
+  /* ---------- Newsletter subscribe popup (open/close + first-visit) ---------- */
+  function initNewsletterModal() {
+    var modal = document.querySelector('.nl-modal');
+    if (!modal) return;
+    var card = modal.querySelector('.nl-modal-card');
+    var closeBtn = modal.querySelector('.nl-modal-close');
+
+    function open() { modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+    function close() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+
+    document.querySelectorAll('[data-nl-open]').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.preventDefault(); open(); });
+    });
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+    if (card) card.addEventListener('click', function (e) { e.stopPropagation(); });
+
+    // First visit on the home page: show once if the visitor isn't a member yet.
+    var isHome = document.body.classList.contains('home-template');
+    var isMember = document.body.getAttribute('data-member') === '1';
+    var seen = false;
+    try { seen = localStorage.getItem('sbk_nl_prompt') === '1'; } catch (e) {}
+    if (isHome && !isMember && !seen) {
+      setTimeout(function () {
+        open();
+        try { localStorage.setItem('sbk_nl_prompt', '1'); } catch (e) {}
+      }, 6000);
+    }
+  }
+
+  /* ---------- Donate page: dynamic donate button (opens URL in a new tab) ---------- */
+  function initDonateButton() {
+    document.querySelectorAll('.donate-online-btn').forEach(function (btn) {
+      var url = btn.getAttribute('data-href');
+      if (!url) { btn.style.display = 'none'; return; }
+      btn.addEventListener('click', function () { window.open(url, '_blank', 'noopener'); });
+    });
+  }
+
+  /* ---------- Enquire page: preselect the interest from the ?for= query ---------- */
+  function initEnquirePrefill() {
+    var sel = document.getElementById('eq-interest');
+    if (!sel) return;
+    var params = new URLSearchParams(window.location.search);
+    var want = (params.get('for') || '').toLowerCase();
+    if (!want) return;
+    Array.prototype.forEach.call(sel.options, function (opt) {
+      if (opt.value.toLowerCase() === want) sel.value = opt.value;
+    });
   }
 
   /* ---------- Home About "Who We Are" from a post ----------

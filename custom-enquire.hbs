@@ -1,0 +1,88 @@
+{{!< default}}
+{{#post}}
+
+<header class="page-hero center">
+    <div class="container">
+        <div class="page-hero-inner reveal">
+            <nav class="breadcrumb"><a href="{{@site.url}}">Home</a> <span>/</span> <span>{{title}}</span></nav>
+            <span class="eyebrow center">Get in touch</span>
+            <h1>{{title}}</h1>
+            {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>Tell us how you'd like to be involved — apply for a programme, volunteer, or partner with us. We'll get back to you.</p>{{/if}}
+        </div>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+        <div class="enquire-layout">
+            {{!-- Left: supporting info --}}
+            <aside class="enquire-aside reveal">
+                {{#if content}}<div class="post-content">{{content}}</div>{{else}}
+                <h2>How can we help?</h2>
+                <p>Share a few details and our team will reach out. For urgent needs, call or email us directly.</p>
+                {{/if}}
+                <div class="enquire-contacts">
+                    {{#if @custom.contact_phone}}
+                    <a href="tel:{{@custom.contact_phone}}" class="enquire-contact">
+                        <span class="ec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2 1c1 2 2.5 3.5 4.5 4.5l1-2 5 2v3c0 1-1 2-2 2A16 16 0 013 6c0-1 1-2 2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+                        <span><span class="ec-label">Call us</span><br><b>{{@custom.contact_phone}}</b></span>
+                    </a>
+                    {{/if}}
+                    {{#if @custom.contact_email}}
+                    <a href="mailto:{{@custom.contact_email}}" class="enquire-contact">
+                        <span class="ec-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6"/></svg></span>
+                        <span><span class="ec-label">Email us</span><br><b>{{@custom.contact_email}}</b></span>
+                    </a>
+                    {{/if}}
+                </div>
+            </aside>
+
+            {{!-- Right: enquiry form --}}
+            <div class="enquire-form-card reveal reveal-delay-1">
+                <h3>Send an enquiry</h3>
+                <form id="enquire-form" action="mailto:{{@custom.contact_email}}" method="post" enctype="text/plain">
+                    <div class="form-grid-2">
+                        <div class="form-row"><label for="eq-name">Full name</label><input id="eq-name" type="text" name="Name" placeholder="Your full name" required></div>
+                        <div class="form-row"><label for="eq-phone">Phone</label><input id="eq-phone" type="tel" name="Phone" placeholder="Your phone number" required></div>
+                    </div>
+                    <div class="form-grid-2">
+                        <div class="form-row"><label for="eq-email">Email</label><input id="eq-email" type="email" name="Email" placeholder="you@example.com" required></div>
+                        <div class="form-row"><label for="eq-city">City / Town</label><input id="eq-city" type="text" name="City" placeholder="Where are you based?"></div>
+                    </div>
+                    <div class="form-grid-2">
+                        <div class="form-row"><label for="eq-interest">I'm enquiring about</label>
+                            <div class="filter-select">
+                                <select id="eq-interest" name="Enquiry_For">
+                                    <option value="General">General enquiry</option>
+                                    <option value="Sevadhama">Sevadhama — Rehabilitation</option>
+                                    <option value="Sabalini">Sabalini — Women empowerment</option>
+                                    <option value="Arogyam">Arogyam — Community health</option>
+                                    <option value="Volunteer">Volunteering</option>
+                                    <option value="Support">Partnership / CSR support</option>
+                                    <option value="Donate">Donation</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row"><label for="eq-role">You are a</label>
+                            <div class="filter-select">
+                                <select id="eq-role" name="Role">
+                                    <option value="Individual">Individual</option>
+                                    <option value="Beneficiary / Family">Beneficiary / Family</option>
+                                    <option value="Organisation / Company">Organisation / Company</option>
+                                    <option value="Student">Student</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row"><label for="eq-msg">Message</label><textarea id="eq-msg" name="Message" placeholder="Tell us a little about your enquiry" required></textarea></div>
+                    <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Submit Enquiry
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <p class="enquire-note">By submitting, you agree to be contacted by our team regarding your enquiry.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{/post}}
