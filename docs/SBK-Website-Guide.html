@@ -129,6 +129,7 @@
     <li><span class="t-num">7</span><span><span class="t-name">Events, newsletters &amp; reports</span><span class="t-desc">— time-based content</span></span></li>
     <li><span class="t-num">8</span><span><span class="t-name">Settings &amp; navigation</span><span class="t-desc">— site-wide values and menus</span></span></li>
     <li><span class="t-num">9</span><span><span class="t-name">Quick reference</span><span class="t-desc">— tags, templates and icon names</span></span></li>
+    <li><span class="t-num">10</span><span><span class="t-name">Forms &amp; email setup</span><span class="t-desc">— how contact, enquire and newsletter work behind the scenes</span></span></li>
   </ol>
 </div>
 
@@ -325,7 +326,7 @@
     <tr><th>Section</th><th>How to fill it</th></tr>
     <tr><td>About block</td><td>From the page body: line 1 = heading, line 2 = paragraph, line 3 onward = a full-width box after the services.</td></tr>
     <tr><td>Activities / services</td><td>Posts tagged <span class="tag">sevadhama-activities</span> / <span class="tag">sabalini-activities</span> / <span class="tag">arogyam-activities</span>. Title = name, Excerpt = description, Feature image = icon.</td></tr>
-    <tr><td>Apply / Enquire band</td><td>Meta title = heading, Meta description = text, Canonical URL = button link.</td></tr>
+    <tr><td>Apply / Enquire band</td><td>First button — its <b>label</b> comes from <b>Meta title</b> (default "Enquire Now" / "Apply Now") and its <b>link</b> from <b>Canonical URL</b> (default the <span class="path">/enquire/</span> page). Meta description fills the band paragraph. The second button is a <b>Donate</b> button linking to the Donate page.</td></tr>
     <tr><td>Impact numbers</td><td>Posts tagged <span class="tag">sevadhama-impact</span> / <span class="tag">sabalini-impact</span> / <span class="tag">arogyam-impact</span> — see Section 6.</td></tr>
     <tr><td>Success stories</td><td>Posts tagged <span class="tag">sevadhama-stories</span> / <span class="tag">sabalini-stories</span> / <span class="tag">arogyam-stories</span>.</td></tr>
     <tr><td>Testimonials</td><td>Posts tagged <span class="tag">…-testimonials</span>. Title = name, Excerpt = quote, Feature image = photo.</td></tr>
@@ -349,13 +350,14 @@
     <tr><td>QR code</td><td>The page Feature image.</td></tr>
     <tr><td>Support intro</td><td>The page Excerpt.</td></tr>
     <tr><td>Sponsorship table</td><td>Post tagged <span class="tag">donate-sponsorship</span> — see Section 6.</td></tr>
+    <tr><td>"Donate Online" button</td><td>Appears under the QR code only when the page's <b>Meta title</b> (button label) and <b>Canonical URL</b> (donation link) are both filled. Clicking it opens the link in a new tab.</td></tr>
     <tr><td>"What your donation funds" cards</td><td>Fixed layout.</td></tr>
   </table>
 
   <h3>Contact &amp; Get Involved pages</h3>
   <ul>
     <li><b>Contact</b> — address cards, phone, email and the map all come from theme settings (Section 8). The page also includes a contact form.</li>
-    <li><b>Get Involved</b> — the Donate / Support / Volunteer cards are fixed; the programme-enquiry list is built automatically from the <span class="tag">home-programs</span> pages.</li>
+    <li><b>Get Involved</b> — the Donate / Support / Volunteer cards are fixed (Support and Volunteer link to the Enquire page); the programme-enquiry list is built automatically from the <span class="tag">home-programs</span> pages.</li>
   </ul>
 
   <h3>Stories page</h3>
@@ -366,6 +368,14 @@
 
   <h3>Awards page</h3>
   <p>Add one <b>Image card</b> per award in the page body, and write the award name as the image <b>caption</b>. They render as a framed two-column grid.</p>
+
+  <h3>Enquire page</h3>
+  <p>A dedicated enquiry page (template <b>Enquire</b>, slug <span class="path">enquire</span>) with a fuller form than Contact — name, phone, email, city, "enquiring about", role, and message. The programme <b>Apply / Enquire</b> buttons and the Get Involved <b>Support / Volunteer</b> buttons point here.</p>
+  <ul>
+    <li>The supporting text on the left comes from the page body (optional); phone and email come from theme settings.</li>
+    <li>You can deep-link to preselect the interest with <span class="path">?for=</span>, e.g. <span class="path">/enquire/?for=Volunteer</span>.</li>
+    <li>Submissions use the same email method as the contact form — see Section 10.</li>
+  </ul>
 </div>
 
 <!-- ===================== 5b. TEAM PAGE ===================== -->
@@ -501,6 +511,11 @@
     <li>The publish date determines the year shown in the year filter, and the order. Click <b>Publish</b>.</li>
   </ol>
 
+  <h3>Newsletter subscribe popup</h3>
+  <p>A blue <b>Subscribe to newsletter</b> button sits on the Newsletters and Annual Reports pages. Clicking it opens a popup where a visitor enters their email. First-time visitors to the home page also see this popup once (it won't nag returning or already-subscribed visitors).</p>
+  <div class="note">This is powered by Ghost's built-in Members + email system, which must be switched on once. The one-time setup (Membership, newsletter, and email delivery) is in <b>Section 10</b>. Until that is done, the form will show an error when submitted.</div>
+  <p>The PDF issues listed on <span class="path">/newsletters/</span> are the <b>archive</b>. The subscribe popup builds your <b>email list</b> so future posts can be emailed out — the two are separate.</p>
+
   <h3>Add a blog post</h3>
   <ol class="steps">
     <li><b>Posts → New post.</b> Write the title and the article in the body.</li>
@@ -534,7 +549,6 @@
     <tr><td>Contact address (main / southadka / byndoor)</td><td>Contact page address cards and footer</td></tr>
     <tr><td>Contact map embed url</td><td>Map on the contact page</td></tr>
     <tr><td>Donate UPI id</td><td>UPI line on the donate page</td></tr>
-    <tr><td>Donate external url</td><td>Online donation button link</td></tr>
     <tr><td>WhatsApp number</td><td>Footer WhatsApp icon (digits with country code)</td></tr>
     <tr><td>Home stat — identified / rehabilitated / devices / families / health / blood</td><td>The six numbers in the home "Social Impact" cards</td></tr>
   </table>
@@ -609,10 +623,11 @@
     <tr><td>Sabalini</td><td>Sabalini</td><td>Stories</td><td>Stories</td></tr>
     <tr><td>Arogyam</td><td>Arogyam</td><td>Awards</td><td>Awards</td></tr>
     <tr><td>Impact</td><td>Impact</td><td>Legal Status</td><td>Legal</td></tr>
+    <tr><td>Enquire</td><td>Enquire</td><td></td><td></td></tr>
   </table>
 
   <h3>Icon names for the statistics tables</h3>
-  <p>Use any of these as the <b>id</b> column in an impact table:</p>
+  <p>Use any of these as the <b>id</b> column in an impact table. The icons are <b>SVG</b> files in <span class="path">assets/impact-icons</span>; to add a new one, drop a <span class="path">.svg</span> there and use its file name (without <span class="path">.svg</span>) as the id.</p>
   <div class="box" style="font-family:'SFMono-Regular',Consolas,monospace; font-size:8.5pt; line-height:2;">
     ambulance &middot; blood-donation-camp &middot; blood-units &middot; diabetic-machines &middot; doctors-office &middot; grocery-kit &middot; home-accessibility &middot; hospital-visited &middot; livelihood-cases &middot; medical-assistance &middot; medical-camp &middot; medical-intervention &middot; medical-kit &middot; mobility-aids &middot; panchayats-visited &middot; rehabilitation &middot; rural-women &middot; search &middot; self-employed &middot; serving-health &middot; sewing-machine &middot; solar-inverter &middot; surgical-assistance &middot; taluka-covered &middot; team &middot; walking-stick &middot; wheelchair &middot; women-empowered
   </div>
@@ -620,11 +635,44 @@
   <h3>Fields used as links</h3>
   <ul>
     <li><b>Facebook title</b> — a link URL: the hero slide button and the event "Register" button.</li>
-    <li><b>Meta title / Meta description / Canonical URL</b> — the label, text and link of the home focus cards and the programme Apply/Enquire band.</li>
+    <li><b>Meta title / Meta description / Canonical URL</b> — the home focus cards; the programme <b>Apply/Enquire band's first button</b> (Meta title = label, Canonical URL = link, default <span class="path">/enquire/</span>); and the Donate page's <b>"Donate Online" button</b> (Meta title = label, Canonical URL = link).</li>
     <li><b>Excerpt</b> — the event date (<span class="path">YYYY-MM-DD</span>) for events, and the intro text on the donate page.</li>
   </ul>
 
   <div class="tip" style="margin-top:24px;"><b>Need help?</b> If a section ever looks empty or shows old placeholder content, check three things: the post is <b>published</b> (not draft), the <b>tag</b> is spelled exactly as listed, and the right <b>fields</b> are filled.</div>
+</div>
+
+<!-- ===================== 10. FORMS & EMAIL SETUP ===================== -->
+<div class="section">
+  <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Forms &amp; email setup</h2></div>
+  <p class="sec-intro">How the Contact form, the Enquire form, and the Newsletter work behind the scenes — and the one-time setup each needs.</p>
+
+  <h3>Contact form &amp; Enquire form</h3>
+  <p>Both forms use your device's email app. When a visitor presses Submit, their email program (Gmail, Outlook, etc.) opens with a new message pre-filled from the form fields, addressed to your contact email. The visitor then presses Send in their mail app.</p>
+  <table>
+    <tr><th>Point</th><th>Detail</th></tr>
+    <tr><td>Setup needed</td><td>Just the <b>Contact email</b> in theme settings. Nothing else.</td></tr>
+    <tr><td>Where it goes</td><td>Straight to your contact inbox as a normal email.</td></tr>
+    <tr><td>Good to know</td><td>It relies on the visitor having an email app set up. On phones this usually works; on some desktops without a default mail app, the button may do nothing.</td></tr>
+  </table>
+  <div class="tip"><b>Want submissions stored and emailed automatically</b> (no dependence on the visitor's mail app)? Connect a free form service such as <b>Formspree</b> or <b>Web3Forms</b> — it's a one-line change to each form. Ask your developer to point the forms at the service's address; everything else stays the same.</div>
+
+  <h3>Newsletter — how it works</h3>
+  <ol class="steps">
+    <li>A visitor enters their email in the subscribe popup. Ghost creates a <b>member</b> and emails them a <b>confirmation link</b> (no password).</li>
+    <li>When they click the link, they become a confirmed subscriber to your newsletter.</li>
+    <li>To send an issue, you write a normal <b>Post</b> and choose <b>"Publish + Email"</b> — Ghost emails it to all subscribers. (The PDF issues on the Newsletters page are a separate archive.)</li>
+  </ol>
+
+  <h3>Newsletter — one-time setup in Ghost Admin</h3>
+  <ol class="steps">
+    <li><b>Settings → Membership</b> → turn <b>Members on</b> and allow free sign-ups. Without this, the subscribe popup shows an error.</li>
+    <li><b>Settings → Email newsletter</b> → create and name your newsletter (e.g. "Sevabharti Newsletter"), and set the sender name and reply-to address.</li>
+    <li><b>Connect email delivery (Mailgun).</b> Ghost sends newsletter emails through <b>Mailgun</b>. Create a Mailgun account, verify your sending domain, and paste the Mailgun <b>API key, domain and region</b> into Settings → Email newsletter. This is what actually delivers the emails.</li>
+    <li>Optional: brand the sign-up/confirmation experience under <b>Settings → Portal</b>.</li>
+  </ol>
+  <div class="note"><b>Hosting note.</b> On <b>Ghost(Pro)</b>, member sign-ups and confirmation emails work out of the box; you still add Mailgun to send newsletter issues. On <b>self-hosted</b> Ghost, configure both the transactional email (SMTP) and Mailgun.</div>
+  <div class="warn"><b>Until Membership + Mailgun are set up</b>, the subscribe button and the first-visit popup will appear but submitting an email will fail. Enable them first, then test with your own email.</div>
 </div>
 
 </body>
